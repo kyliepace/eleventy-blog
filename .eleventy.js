@@ -17,8 +17,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: '_template',
-      includes: '../_includes',
+      input: 'src/templates',
+      includes: '../includes',
       output: '_output',
     },
   };
