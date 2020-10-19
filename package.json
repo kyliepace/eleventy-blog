@@ -7,10 +7,20 @@
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "prettier --check \"src/**/*.js\"",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "canvas-confetti": "^1.2.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@snowpack/plugin-run-script": "^2.1.6",
+    "prettier": "^2.0.5",
+    "snowpack": "^2.14.3"
   },
   "engines": {
     "node": "12.x"
