@@ -1,7 +1,7 @@
 {
   "mount": {
     "_output": "/",
-    "src": "/_dist_"
+    "src": "/build"
   },
   "devOptions": {
     "hmrDelay": 300
