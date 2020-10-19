@@ -3,7 +3,6 @@ dependencies:
 devDependencies:
   '@11ty/eleventy': 0.11.0
   '@snowpack/plugin-run-script': 2.1.6
-  prettier: 2.1.2
   snowpack: 2.14.3
 packages:
   /@11ty/dependency-tree/1.0.0:
@@ -2634,13 +2633,6 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==
-  /prettier/2.1.2:
-    dev: true
-    engines:
-      node: '>=10.13.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
   /pretty-ms/0.2.2:
     dependencies:
       parse-ms: 0.1.2
@@ -3698,6 +3690,5 @@ shrinkwrapVersion: 3
 specifiers:
   '@11ty/eleventy': ^0.11.0
   '@snowpack/plugin-run-script': ^2.1.6
-  canvas-confetti: ^1.2.0
-  prettier: ^2.0.5
+  canvas-confetti: ^1.2.1
   snowpack: ^2.14.3
