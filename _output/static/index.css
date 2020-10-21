@@ -59,6 +59,10 @@ body {
   line-height: 105%;
 }
 
+.postTitle {
+  font-size: 56px;
+}
+
 .wrapper {
   min-height: var(--wrapper-height);
   display: grid;
