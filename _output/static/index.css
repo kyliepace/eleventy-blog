@@ -1,11 +1,10 @@
 /* Our default values set for mobile */
 :root {
-  --color-bg: #69F7BE;
-  --color-text-main: #373fff;
+  --color-bg: #AFECE0;
+  --color-text-main: #2800FF;
   --wrapper-height: 87vh;
   --image-max-width: 300px;
   --image-margin: 1rem;
-
 }
 
 /* Tablet portrait */
@@ -77,8 +76,19 @@ body {
 
 /* Navigation grid */
 .navigation {
-  display: grid;
-  place-items: end;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.navigation a {
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 130%;
+  color: var(--color-text-main);
+  text-decoration: none;
 }
 
 /* Our remix on glitch button + grid for other actions */
