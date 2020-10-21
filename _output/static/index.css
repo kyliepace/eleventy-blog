@@ -79,6 +79,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .navigation a {
@@ -98,7 +100,7 @@ body {
   padding-right: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  font-size: 1.1rem;
+  font-size: .8rem;
   line-height: 1rem;
   font-weight: 500;
   align-items: center;
