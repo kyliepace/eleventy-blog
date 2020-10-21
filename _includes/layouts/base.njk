@@ -8,12 +8,10 @@
     <link rel="stylesheet" type="text/css" href="/static/index.css" />
     <title>Snowpack App</title>
   </head>
-  <body>  
-    <div class="wrapper">
-      <div class="content">
-        <p>{{ content | safe }}</p>
-      </div>
-    </div>
+  <body>
+  <main>
+    {{ content | safe }}
+  </main>
     <div class="navigation">
         <a href="/about">About Page</a>
         <a href="/blog">Blog</a>

@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/home.njk
 ---
 
 <span class="title">About</span>

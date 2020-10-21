@@ -2,5 +2,8 @@
 layout: layouts/base.njk
 templateClass: tmpl-home
 ---
-<h1 class='postTitle'>{{title}}</h1>
+<div class="wrapper post">
+  <div><h1 class='postTitle'>{{title}}</h1>
 {{ content | safe }}
+  </div>
+</div>
