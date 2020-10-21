@@ -2,7 +2,7 @@
 :root {
   --color-bg: #AFECE0;
   --color-text-main: #2800FF;
-  --wrapper-height: 87vh;
+  --wrapper-height: 90vh;
   --image-max-width: 300px;
   --image-margin: 1rem;
 }
@@ -10,7 +10,7 @@
 /* Tablet portrait */
 @media (min-width: 768px) {
   :root {
-    --wrapper-height: 87vh;
+    --wrapper-height: 90vh;
     --image-max-width: 400px;
     --image-margin: 5rem;
   }
@@ -19,7 +19,7 @@
 /* Tablet Landscape */
 @media (min-width: 1024px) {
   :root {
-    --wrapper-height: 87vh;
+    --wrapper-height: 90vh;
     --image-max-width: 500px;
   }
 }
@@ -27,7 +27,7 @@
 /* Desktop */
 @media (min-width: 1280px) {
   :root {
-    --wrapper-height: 87vh;
+    --wrapper-height: 90vh;
     --image-max-width: 500px;
   }
 }
@@ -62,7 +62,6 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .title-lg {
