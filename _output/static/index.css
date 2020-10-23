@@ -110,6 +110,13 @@ body {
 }
 
 /* Our remix on glitch button */
+.navigation--button {
+  display: flex;
+  justify-content: right;
+  align-content: right;
+  margin: 0 auto;
+  width: 80%;
+}
 .btn--remix {
   font-family: HK Grotesk;
   padding-left: 1rem;
