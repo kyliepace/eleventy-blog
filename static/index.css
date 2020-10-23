@@ -95,7 +95,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 80%;
 }
 
@@ -103,7 +103,7 @@ body {
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 130%;
   color: var(--color-text-main);
   text-decoration: none;
