@@ -4,7 +4,7 @@
   --color-text-main: #2800FF;
   --wrapper-height: 90vh;
   --image-max-width: 300px;
-  --image-margin: 1rem;
+  --image-margin: 5rem;
 }
 
 /* Tablet portrait */
@@ -95,18 +95,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: 1rem auto;
-  width: 80%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  width: 30%;
 }
 
 .navigation a {
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 130%;
   color: var(--color-text-main);
   text-decoration: none;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+  color: #ffffff;
 }
 
 /* Our remix on glitch button */
