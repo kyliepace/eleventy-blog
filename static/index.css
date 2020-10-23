@@ -1,25 +1,28 @@
 /* Our default values set for mobile */
 :root {
-  --color-bg: #AFECE0;
-  --color-text-main: #2800FF;
-  --wrapper-height: 90vh;
+  --color-bg: #69F7BE;
+  --color-text-main: #373fff;
+  --wrapper-height: 80vh;
   --image-max-width: 300px;
-  --image-margin: 1rem;
+  --image-margin: 3rem;
+  --title-font-size: 100px;
+
 }
 
 /* Tablet portrait */
 @media (min-width: 768px) {
   :root {
-    --wrapper-height: 90vh;
+    --wrapper-height: 87vh;
     --image-max-width: 400px;
     --image-margin: 5rem;
+    --title-font-size: 120px;
   }
 }
 
 /* Tablet Landscape */
 @media (min-width: 1024px) {
   :root {
-    --wrapper-height: 90vh;
+    --wrapper-height: 87vh;
     --image-max-width: 500px;
   }
 }
@@ -27,7 +30,7 @@
 /* Desktop */
 @media (min-width: 1280px) {
   :root {
-    --wrapper-height: 90vh;
+    --wrapper-height: 87vh;
     --image-max-width: 500px;
   }
 }
@@ -45,16 +48,24 @@
     format("opentype");
 }
 
-/* Global Layout */
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
 }
 
+.title {
+  color: var(--color-text-main);
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--title-font-size);
+  line-height: 105%;
+}
+
 .wrapper {
   min-height: var(--wrapper-height);
   display: grid;
-  place-items: normal;
+  place-items: center;
   margin-left: 2rem;
   margin-top: 3rem;
 }
@@ -62,68 +73,22 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-}
-
-.title-lg {
-  color: var(--color-text-main);
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 120px;
-  line-height: 105%;
-}
-
-.title-md {
-  font-size: 56px;
-}
-
-/* Layout: Home */
-
-.home {
   align-items: center;
   justify-content: center;
 }
 
-/* Post */
-.post {
-  place-items: normal;
-}
-
-
 /* Navigation grid */
 .navigation {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  margin: 0 auto;
-  width: 80%;
+  display: grid;
+  place-items: end;
+  margin: 1rem;
 }
 
-.navigation a {
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 130%;
-  color: var(--color-text-main);
-  text-decoration: none;
-}
-
-/* Our remix on glitch button */
-.navigation--button {
-  display: flex;
-  justify-content: right;
-  align-content: right;
-  margin: 0 auto;
-  width: 80%;
-}
+/* Our remix on glitch button + grid for other actions */
 .btn--remix {
   font-family: HK Grotesk;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-size: .8rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
   line-height: 1rem;
   font-weight: 500;
   align-items: center;
@@ -139,9 +104,6 @@ body {
   margin-right: 0.5rem;
 }
 
-.btn--remix {
-  margin-right: 1rem;
-}
 
 /* Very light scaling for our illustration */
 .illustration {
@@ -149,3 +111,4 @@ body {
   max-height: var(--image-max-width);
   margin-top: var(--image-margin);
 }
+
