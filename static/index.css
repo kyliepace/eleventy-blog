@@ -116,12 +116,11 @@ body {
 }
 
 /* Our remix on glitch button */
+
 .btn--remix {
+  
   font-family: HK Grotesk;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
   font-weight: 500;
