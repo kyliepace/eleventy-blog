@@ -7,4 +7,7 @@ tags:
 layout: layouts/post.njk
 ---
 
-We'll write something here
+
+You can write an entire blog post here **in markdown**!! 
+
+Make sure to glitch the 👀 markdown button above, to see what it'll look like!
