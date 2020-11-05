@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
   "scripts": {
-    "start": "snowpack dev",
+    "start": "eleventy --serve",
     "dev": "snowpack dev",
     "build": "snowpack build"
   },

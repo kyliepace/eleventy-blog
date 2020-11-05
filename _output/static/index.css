@@ -135,6 +135,7 @@ body {
   border-radius: 4px;
   color: #000;
   text-decoration: none;
+  display: inline;
 }
 
 .btn--remix img {
