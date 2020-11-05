@@ -4,7 +4,7 @@
     "src": "/build"
   },
   "devOptions": {
-    "hmrDelay": 300
+    "hmrDelay": 100
   },
   "plugins": [
     [
