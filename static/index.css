@@ -118,10 +118,11 @@ body {
 /* Our remix on glitch button */
 
 .btn--remix {
-  width: 187px;
-  margin-top: 2rem;
   font-family: HK Grotesk;
-  padding: 0.75rem 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   font-size: 1.1rem;
   line-height: 1rem;
   font-weight: 500;
@@ -132,8 +133,8 @@ body {
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
+  color: #000;
   text-decoration: none;
-  align-self: end;
 }
 
 .btn--remix img {
