@@ -1,3 +1,6 @@
+* { box-sizing: border-box}
+[hidden] {display: none !important}
+
 /* Our default values set for mobile */
 :root {
   --color-bg: #AFECE0;
