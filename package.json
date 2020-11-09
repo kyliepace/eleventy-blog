@@ -7,8 +7,7 @@
     "dev": "snowpack dev",
     "build": "snowpack build"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@snowpack/plugin-run-script": "^2.1.6",

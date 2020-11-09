@@ -1,8 +1,4 @@
-const pluginNavigation = require("@11ty/eleventy-navigation");
-
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginNavigation);
-
   eleventyConfig.setTemplateFormats([
     // Templates:
     "html",
@@ -21,7 +17,8 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      includes: "src/_includes",
+      input: "src",
+      includes: "_includes",
       output: "_output"
     }
   };
