@@ -2,6 +2,11 @@
 layout: layouts/page.njk
 ---
 
-<h1 class="title-md">About!</h1>
+## About!
 
-[11ty](https://www.11ty.dev/), powered by [Snowpack](http://snowpack.dev/) and [Glitch](https://glitch.com)
+👋🏼 Here you can write some details about yourself:
+- Detail one
+- Detail two
+- Detail three
+
+Built with [Eleventy](https://www.11ty.dev/) and [Glitch](https://glitch.com).
