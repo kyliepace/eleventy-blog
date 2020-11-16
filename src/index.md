@@ -3,6 +3,7 @@ layout: layouts/home.njk
 ---
 
 # Hello eleventy!
-Some block of text here to illustrate how cool Eleventy is! 
+
+Welcome to the Glitch eleventy starter, where you can create a blog or landing page that generates a static site.
 
 ### Recent Posts
