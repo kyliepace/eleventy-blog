@@ -9,9 +9,9 @@ layout: layouts/post.njk
 
 This is your first blog post in eleventy! Written entirely in markdown, this page will update as you write in the markdown editor.
 
-# Star Wars
+# Header
 
-What's wrong? Oh, it's Han! I don't know, I really thought he'd change his mind. He's got to follow his own path. No one can choose it for him. I only wish Ben were here. This R2 unit of your seems a bit beat up. Do you want a new one? Not on your life! That little droid and I have been through a lot together. You okay, Artoo? Okay, easy she goes! Hang on tight,Artoo, you've got to come back. You wouldn't want my life to get boring, would you? Luke, the Force will be with you.
+This is ready for you to start writing now!
 
 ## H2
 

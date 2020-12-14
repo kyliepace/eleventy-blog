@@ -4,7 +4,9 @@ templateClass: tmpl-home
 ---
 
 <div class="wrapper post">
-  <div><h1 class='postTitle'>{{title}}</h1>
-{{ content | safe }}
+  <div>
+    <h1 class='postTitle'>{{title}}</h1>
+
+    {{ content | safe }}
   </div>
 </div>
