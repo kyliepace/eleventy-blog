@@ -1,7 +1,7 @@
 {
   "name": "hello-eleventy",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "description": "A simple blog, set up with Eleventy.",
   "scripts": {
     "start": "eleventy --serve",
     "dev": "snowpack dev",
