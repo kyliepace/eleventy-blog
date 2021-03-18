@@ -1,5 +1,5 @@
 ---
-title: Your First Blog Post
+title: Creating Posts
 description: Eleventy makes it really easy to create a blog
 date: 2021-03-17
 tags:

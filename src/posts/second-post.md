@@ -29,8 +29,4 @@ This loops through all of your posts and displays a link to them. A quick optimi
 
 ### page.njk
 
-Page is a template for 
-
-### post.njk
-
-### posts.njk
+Page is a template for additional pages like [about](/about). 
