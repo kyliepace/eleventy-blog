@@ -1,5 +1,7 @@
 ## Hello Eleventy
 
+[Eleventy](https://www.11ty.dev/) is a simple static site generator. 
+
 ### Files
 
 ← README.md: That’s this file, where you can tell people what your cool website does and how you built it.
