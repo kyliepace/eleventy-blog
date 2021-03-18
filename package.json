@@ -16,7 +16,7 @@
     "snowpack": "^2.14.3"
   },
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"

@@ -14,9 +14,20 @@
     
 <div class="wrapper post">
   <div>
-    <h1 class='postTitle'>Second Post</h1>
+    <h1 class='postTitle'>Layouts</h1>
 
-    <p>WIP second blog post</p>
+    <p>We've included a few helpful templates to get you started, which you can find nested in the <code>src/_includes/layouts</code> folder.</p>
+<p>By default eleventy uses a templating language called <a href="https://mozilla.github.io/nunjucks/">nunjucks</a>, and has files ending in <code>.njk</code>.</p>
+<h3>base.njk</h3>
+<p>This is your default template and each template extends from this one.</p>
+<h3>home.njk</h3>
+<p>Home extends the base template, and makes a list of the blog posts that you've made, to display in a list.</p>
+<p><code>&lt;li&gt;2021-03-17 — &lt;a href='/posts/first-blog-post/'&gt;Your First Blog Post&lt;/a&gt;&lt;/li&gt;&lt;li aria-current=&quot;page&quot;&gt;2021-03-17 — &lt;a href='/posts/second-post/'&gt;Layouts&lt;/a&gt;&lt;/li&gt;</code></p>
+<p>This loops through all of your posts and displays a link to them. A quick optimization might be limiting this to 5 posts!</p>
+<h3>page.njk</h3>
+<p>Page is a template for</p>
+<h3>post.njk</h3>
+<h3>posts.njk</h3>
 
   </div>
 </div>
