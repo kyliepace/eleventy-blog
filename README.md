@@ -9,3 +9,5 @@
 ← src/\_includes: This is where all of your page level layouts go
 
 ← static/index.css: CSS files add styling rules to your content.
+
+← `build`: Your development bundle will be here while you're creating your app. When it goes to sleep, glitch will automatically run the `build` NPM command for a production build.

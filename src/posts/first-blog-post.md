@@ -1,7 +1,7 @@
 ---
 title: Creating Posts
 description: Eleventy makes it really easy to create a blog
-date: 2021-03-17
+date: 2021-03-10
 tags:
   - posts
 layout: layouts/post.njk

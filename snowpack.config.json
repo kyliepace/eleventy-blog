@@ -6,6 +6,11 @@
   "devOptions": {
     "hmrDelay": 100
   },
+  "optimize": {
+    "bundle": true,
+    "minify": true,
+    "target": "es2020"
+  },
   "plugins": [
     [
       "@snowpack/plugin-run-script",

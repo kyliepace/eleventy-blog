@@ -1,0 +1,20 @@
+{
+  "inputs": {
+    "static/index.css": {
+      "bytes": 3558,
+      "imports": []
+    }
+  },
+  "outputs": {
+    "../~~bundle~~/static/index.css": {
+      "imports": [],
+      "entryPoint": "static/index.css",
+      "inputs": {
+        "static/index.css": {
+          "bytesInOutput": 2675
+        }
+      },
+      "bytes": 2676
+    }
+  }
+}
