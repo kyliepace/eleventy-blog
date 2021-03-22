@@ -3,4 +3,5 @@ layout: layouts/posts.njk
 ---
 
 # Posts
-Here is some more details?
+
+Write some details about your post lists. Or don't, and remove this!
