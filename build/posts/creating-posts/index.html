@@ -12,20 +12,27 @@
   <main>
   
     
-<div class="wrapper home">
-  <div class="content">
-    <h1>Hello eleventy!</h1>
-<p>Welcome to the Glitch eleventy starter, where you can create a blog or landing page that generates a static site.</p>
-<p>We've given you instructions as the first blog posts, remove them when you're ready to create your own.</p>
-<h3>Recent Posts</h3>
+<div class="wrapper post">
+  <div>
+    <h1 class='postTitle'>Creating Posts</h1>
 
-    <ul><li>2021-03-09 — <a href='/posts/eleventy-on-glitch/'>Welcome to Eleventy on Glitch!</a></li><li>2021-03-10 — <a href='/posts/creating-posts/'>Creating Posts</a></li><li>2021-03-11 — <a href='/posts/second-post/'>Layouts</a></li><li>2021-03-12 — <a href='/posts/third-post/'>Additional Pages</a></li><li>2021-03-13 — <a href='/posts/snowpack/'>Snowpack</a></li><li>2021-03-18 — <a href='/posts/next-steps/'>Next Steps</a></li><li><a href="/blog">View all posts</a></li>
-    </ul>
+    <p>This is your first blog post in eleventy! Written entirely in markdown, this page will update as you write in the markdown editor.</p>
+<p>Don't know how to edit Markdown on Glitch? Click on the &quot;Markdown&quot; button just above this editor window.</p>
+<h3>Post Metadata</h3>
+<p>You can see the front matter block at the top of the markdown file,</p>
+<pre><code>---
+title: Your First Blog Post
+description: Eleventy makes it really easy to create a blog
+date: 2021-03-17
+tags:
+  - posts
+layout: layouts/post.njk
+---
+</code></pre>
+<p>This allows you to attach details to your blog posts, that your templates (<code>layouts/post.njk</code>) can read.</p>
+
   </div>
 </div>
-
-
-
 
       <footer class="footer">
         <div class="links">
