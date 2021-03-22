@@ -14,13 +14,15 @@
     
 <div class="wrapper post">
   <div>
-    <h1 class='postTitle'>Snowpack</h1>
+    <h1 class='postTitle'>About Pages &amp; Other Content</h1>
 
-    <p>We use <a href="https://snowpack.dev">snowpack</a> in all of our generated static site starters. It has allowed us to ensure the same build process happens across them, and we can introduce Glitch specific plugins in the future.</p>
-<p>Snowpack has kept on the edge of what browsers can support natively, and provides ES modules directly from <a href="https://skypack.dev">package</a>. We aren't using that in this starter, but might in the future.</p>
-<ul>
-<li><strong>Try this</strong>: Want to see how Glitch helps you use and update new Node packages? Edit the <code>package.json</code></li>
-</ul>
+    <p>Eleventy can create any type of page for you.</p>
+<p>As an example we've provided an <code>about.md</code> which automatically creates the route <a href="/about">about</a>. It uses the page template in the frontmatter:</p>
+<pre><code>---
+layout: layouts/page.njk
+---
+</code></pre>
+<p>And then you can write a new page completely in markdown!</p>
 
   </div>
 </div>

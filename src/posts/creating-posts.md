@@ -1,5 +1,5 @@
 ---
-title: Creating Posts
+title: It's time to write some posts
 description: Eleventy makes it really easy to create a blog
 date: 2021-03-10
 tags:
@@ -7,13 +7,15 @@ tags:
 layout: layouts/post.njk
 ---
 
-This is your first blog post in eleventy! Written entirely in markdown, this page will update as you write in the markdown editor. 
+This is a standard Eleventy blog post, written entirely in Markdown. (Don't know Markdown? Here are [some tips](https://www.markdownguide.org/cheat-sheet/).) With Glitch, you can edit Markdown right in the editor, and this page will update as you type. 
 
-Don't know how to edit Markdown on Glitch? Click on the "Markdown" button just above this editor window.
+Want to switch between editing Markdown and seeing a preview of your formatted text? Click on the "Markdown" button just above this editor window.
+
+* **Try this**: Are the live updates to your site distracting you while you write or work? Go to the project menu in the top-left of your Glitch editor, and uncheck the box for "Refresh App on Changes"
 
 ### Post Metadata
 
-You can see the front matter block at the top of the markdown file, 
+In addition to the text of your blog post, there's some metadata that tells Eleventy about things like the title and date of your post. That's stored in a "front matter block" at the top of the markdown file, which looks like this. You'll figure it out, no problem.
 
 ```
 ---

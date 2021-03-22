@@ -1,6 +1,6 @@
 ---
-title: You won't believe what you can do with Eleventy on Glitch!
-description: Your site is up and running.
+title: Getting started with Eleventy on Glitch!
+description: You won't believe how easy it can be.
 date: 2021-03-09
 tags:
   - posts
