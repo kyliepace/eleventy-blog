@@ -1,5 +1,5 @@
 ---
-title: Snowpack
+title: Snowpack & npm
 description: What could you build on top of this?
 date: 2021-03-13
 tags:
@@ -12,4 +12,4 @@ We use [snowpack](https://snowpack.dev) in all of our generated static site star
 Snowpack has kept on the edge of what browsers can support natively, and provides ES modules directly from [package](https://skypack.dev). We aren't using that in this starter, but might in the future.
 
 
-* **Try this**: Want to see how Glitch helps you use and update new Node packages? Edit the `package.json` file in your p
+* **Try this**: Want to see how Glitch helps you use and update new Node packages? Edit the `package.json` file in your project and you'll see an "Add Package" button that helps keep your project up to date.

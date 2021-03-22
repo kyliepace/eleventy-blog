@@ -15,6 +15,3 @@ Congrats! You've launched a beautiful new Eleventy-powered blog on Glitch. Want 
 * Use the **Share** button in the Glitch editor to invite others in to edit your new Eleventy project by typing in their email or their Glitch username
   + **Try this**: Make your code, or even your entire app, private to just those you invite, just by [upgrading your Glitch account](https://glitch.com/pricing)
 * Use a **full-powered Linux command line** to manage your new Glitch project. Go to the **Tools** menu in the Glitch editor, and click "Terminal" to peek under the hood.
-
-
-<img src="/static/illustration.svg" width="50%">
