@@ -2,18 +2,15 @@
   "name": "hello-eleventy",
   "version": "0.0.1",
   "description": "A simple blog, set up with Eleventy.",
-  "scripts": {
+   "scripts": {
     "start": "eleventy --serve",
-    "dev": "snowpack dev",
-    "build": "snowpack build"
+    "build": "NODE_ENV=production eleventy"
   },
   "dependencies": {
     "luxon": "^1.26.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "@snowpack/plugin-run-script": "^2.1.6",
-    "snowpack": "^3.0.0"
+    "@11ty/eleventy": "^0.11.1"
   },
   "engines": {
     "node": "12"
