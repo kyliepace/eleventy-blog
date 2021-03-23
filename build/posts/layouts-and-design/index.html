@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your new 11ty blog" />
+    <link rel="stylesheet" type="text/css" href="/static/index.css" />
+    <title>Hello Eleventy!</title>
+  </head>
+  <body>
+  <main>
+  
+    
+<div class="wrapper post">
+  <div>
+    <h1 class='postTitle'>Layouts &amp; Design</h1>
+
+    <p>We've included a few helpful templates to get you started, which you can find nested in the <code>src/_includes/layouts</code> folder.</p>
+<p>By default eleventy uses a templating language called <a href="https://mozilla.github.io/nunjucks/">nunjucks</a>, and has files ending in <code>.njk</code>.</p>
+<h3>base.njk</h3>
+<p>This is your default template and each template extends from this one.</p>
+<h3>home.njk</h3>
+<p>Home extends the base template, and makes a list of the blog posts that you've made, to display in a list.</p>
+<p><code>&lt;li&gt;2021-03-09 — &lt;a href='/posts/eleventy-on-glitch/'&gt;Getting started with Eleventy on Glitch!&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-10 — &lt;a href='/posts/creating-posts/'&gt;It's time to write some posts&lt;/a&gt;&lt;/li&gt;&lt;li aria-current=&quot;page&quot;&gt;2021-03-11 — &lt;a href='/posts/layouts-and-design/'&gt;Layouts &amp; Design&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-12 — &lt;a href='/posts/about-pages/'&gt;About Pages &amp; Other Content&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-13 — &lt;a href='/posts/snowpack/'&gt;Snowpack &amp; npm&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-18 — &lt;a href='/posts/next-steps/'&gt;Next Steps&lt;/a&gt;&lt;/li&gt;</code></p>
+<p>This loops through all of your posts and displays a link to them. A quick optimization might be limiting this to 5 posts!</p>
+<h3>page.njk</h3>
+<p>Page is a template for additional pages like <a href="/about">about</a>.</p>
+
+    
+      <p class="controls">
+        <strong>Previous</strong>: 
+        <a class="previous" href="/posts/creating-posts/">It&#39;s time to write some posts</a>
+      </p>
+    
+    
+      <p class="controls">
+        <strong>Next</strong>: 
+        <a class="next" href="/posts/about-pages/">About Pages &amp; Other Content</a>
+      </p>
+    
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/">Home</a>
+          <span class="divider">|</span>
+          <a href="/posts">Posts</a>
+          <span class="divider">|</span>
+          <a href="/about">About</a>
+        </div>
+        <a class="btn--remix" href="https://glitch.com/edit/#!/remix/glitch-hello-eleventy">
+        <img src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576" /> 
+        Remix on Glitch
+        </a>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>
