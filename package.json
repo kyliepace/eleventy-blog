@@ -26,5 +26,8 @@
     "node",
     "glitch",
     "express"
-  ]
+  ],
+  "glitch": {
+    "projectType": "generated_static"
+  }
 }
