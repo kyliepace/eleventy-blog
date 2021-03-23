@@ -1,8 +1,9 @@
 ---
 layout: layouts/home.njk
 ---
-
-<img src="/static/illustration.svg" class="illustration" style="align: right">
+<div class="illo-container">
+  <img src="/static/illustration.svg" class="illustration" style="align: right">
+</div>
 
 # Hello Eleventy!
 

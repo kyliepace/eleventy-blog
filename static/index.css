@@ -165,6 +165,9 @@ a:hover {
 .post {
   place-items: normal;
 }
+.controls {
+  margin: 4rem 0 2rem;
+}
 
 /* Navigation grid */
 .footer {

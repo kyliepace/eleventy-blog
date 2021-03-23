@@ -9,16 +9,18 @@ templateClass: tmpl-home
 
     {{ content | safe }}
     {% if prevPost.url %}
-      <p class="controls">
-        <strong>Previous</strong>: 
+    <div class="controls">
+      <p>
+        <strong>Previous post</strong>: 
         <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
       </p>
     {% endif %}
     {% if nextPost.url %}
-      <p class="controls">
-        <strong>Next</strong>: 
+      <p>
+        <strong>Next post</strong>: 
         <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
       </p>
+    </div>
     {% endif %}
   </div>
 </div>
