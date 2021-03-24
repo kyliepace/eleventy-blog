@@ -1,5 +1,5 @@
 ---
-title: Additional Pages
+title: About Pages & Other Content
 description: Edit and create pages
 date: 2021-03-12
 tags:

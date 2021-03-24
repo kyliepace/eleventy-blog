@@ -1,5 +1,5 @@
 ---
-title: Layouts
+title: Layouts & Design
 description: How to edit layouts
 date: 2021-03-11
 tags:
