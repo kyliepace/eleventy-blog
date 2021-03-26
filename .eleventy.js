@@ -22,13 +22,14 @@ module.exports = function(eleventyConfig) {
   From: https://github.com/artstorm/eleventy-plugin-seo
   
   Adds SEO settings to the top of all pages
+  The "glitch-default" bit allows someone to set the url in seo.json while
+  still letting it have a proper glitch.me address via PROJECT_DOMAIN
   */
-  eleventyConfig.addPlugin(pluginSEO, {
-    "title": "Hello Eleventy!",
-    "description": "A simple Eleventy blog, built with Glitch.",
-    "url":`https://${process.env.PROJECT_DOMAIN}.glitch.me`,
-    "image": "https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908"
-  });
+  const seo = require("./src/_includes/seo/seo.json");
+  if (seo.url === "glitch-default") {
+    seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
+  }
+  eleventyConfig.addPlugin(pluginSEO, seo);
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
