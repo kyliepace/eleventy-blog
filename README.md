@@ -4,17 +4,17 @@
 
 ### What's in this project?
 
-← README.md: That’s this file, where you can tell people what your cool website does and how you built it.
+← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
 
-← src/: Where you'll find the pages of your site, like about, blog and your home
+← `src/`: Where you'll find the pages of your site, like about, blog and your home
 
-← src/posts/: These are the Markdown files for the posts that make up your blog
+← `src/posts/`: These are the Markdown files for the posts that make up your blog
 
-← src/\_includes: This is where all of your page level layouts go. The **\_** tells you that this is an _eleventy only_ folder.
+← `src/_includes`: This is where all of your page level layouts go. The **\_** tells you that this is an _eleventy only_ folder.
 
-← static/index.css: CSS files add styling rules to your content.
+← `static/index.css`: CSS files add styling rules to your content.
 
-← `build`: Your development bundle will be here while you're creating your app. When it goes to sleep, glitch will automatically run the `build` NPM command for a production build.
+← `build/`: Your development bundle will be here while you're creating your app. When it goes to sleep, glitch will automatically run the `build` NPM command for a production build.
 
 ## You built this with Glitch!
 
