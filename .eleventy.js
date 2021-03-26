@@ -18,10 +18,15 @@ module.exports = function(eleventyConfig) {
   ]);
   eleventyConfig.addPassthroughCopy("static");
   
+  /*
+  From: https://github.com/artstorm/eleventy-plugin-seo
+  
+  Adds SEO settings to the top of all pages
+  */
   eleventyConfig.addPlugin(pluginSEO, {
     "title": "Hello Eleventy!",
-    "description": "Build your own Eleventy blog on Glitch.",
-    "url":`https://.glitch.me`,
+    "description": "A simple Eleventy blog, built with Glitch.",
+    "url":`https://${process.env.PROJECT_DOMAIN}.glitch.me`,
     "image": "https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908"
   });
 
