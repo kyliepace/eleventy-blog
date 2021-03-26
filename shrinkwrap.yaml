@@ -1,4 +1,5 @@
 dependencies:
+  eleventy-plugin-seo: 0.5.1
   luxon: 1.26.0
 devDependencies:
   '@11ty/eleventy': 0.11.1
@@ -726,6 +727,13 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
+  /eleventy-plugin-seo/0.5.1:
+    dependencies:
+      html-entities: 1.4.0
+      lodash: 4.17.21
+    dev: false
+    resolution:
+      integrity: sha512-rNzVeGGsUWBOW74JaP/7po5EbYttF8+fMMXwYzhkV6gYFXOwouVnadrHoyTcHJLwh9kJXx5WAOPIBSyghYmXPA==
   /emitter-mixin/0.0.3:
     dev: true
     resolution:
@@ -1057,6 +1065,10 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  /html-entities/1.4.0:
+    dev: false
+    resolution:
+      integrity: sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA==
   /http-errors/1.6.3:
     dependencies:
       depd: 1.1.2
@@ -1387,7 +1399,6 @@ packages:
     resolution:
       integrity: sha1-+4m2WpqAKBgz8LdHizpRBPiY67M=
   /lodash/4.17.21:
-    dev: true
     resolution:
       integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
   /longest/1.0.1:
@@ -2527,4 +2538,5 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@11ty/eleventy': ^0.11.1
+  eleventy-plugin-seo: ^0.5.1
   luxon: ^1.26.0

@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const pluginSEO = require("eleventy-plugin-seo");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setTemplateFormats([
@@ -16,6 +17,13 @@ module.exports = function(eleventyConfig) {
     "woff2"
   ]);
   eleventyConfig.addPassthroughCopy("static");
+  
+  eleventyConfig.addPlugin(pluginSEO, {
+    title: "Hello Eleventy!",
+    description: "A simple blog site, built with Eleventy on Glitch.",
+    url: "https://foo.com",
+    image: "https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908"
+  });
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
