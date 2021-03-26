@@ -14,9 +14,13 @@
 
 ### Working in the `src/` folder
 
+← `src/index.md`, `src/posts.md`, `src/about.md`,: These Markdown files are the content for 
+
 ← `src/posts/`: These are the Markdown files for the posts that make up your blog
 
 ← `src/_includes`: This is where all of your page level layouts go. The **\_** tells you that this is an _eleventy only_ folder.
+
+← `src/_includes/seo.json`: When you're ready to share your new site or add a custom domain, change settings for social sharing in here.
 
 ## You built this with Glitch!
 
