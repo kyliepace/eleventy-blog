@@ -1,6 +1,8 @@
 # Hello Eleventy
 
-[Eleventy](https://www.11ty.dev/) is a simple static site generator. That means you get all the power of a server-side framework but it builds plain HTML files that can be served as a fast, always-on static site. While you're working in the editor your site will show you files in a local build directory. When you close the editor your site will sleep and run the npm `build` 
+[Eleventy](https://www.11ty.dev/) is a simple static site generator. That means you get all the power of a server-side framework but it builds plain HTML files. 
+
+While you're working in the editor your site will show you files in a local build directory. When you close the editor your site will sleep and run the a `build` script and serve your site as a fast, always-on static site.
 
 ## What's in this project?
 
