@@ -18,12 +18,7 @@ module.exports = function(eleventyConfig) {
   ]);
   eleventyConfig.addPassthroughCopy("static");
   
-  eleventyConfig.addPlugin(pluginSEO, {
-    title: "Hello Eleventy!",
-    description: "A simple blog site, built with Eleventy on Glitch.",
-    url: "https://foo.com",
-    image: "https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908"
-  });
+  eleventyConfig.addPlugin(pluginSEO, require("./src/_includes/seo/seo.json"));
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
