@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
   The "glitch-default" bit allows someone to set the url in seo.json while
   still letting it have a proper glitch.me address via PROJECT_DOMAIN
   */
-  const seo = require("./src/_includes/seo.json");
+  const seo = require("./src/seo/seo.json");
   if (seo.url === "glitch-default") {
     seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
   }
