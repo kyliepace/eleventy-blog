@@ -8,7 +8,7 @@ While you're working in the editor your site will show you files in a local buil
 
 ← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
 
-← `static/index.css`: The styling rules for your pages and posts.
+← `public/index.css`: The styling rules for your pages and posts.
 
 ← `src/`: This folder contains all the files Eleventy will use to build your site.
 

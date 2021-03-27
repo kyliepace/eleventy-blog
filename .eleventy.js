@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
     "woff",
     "woff2"
   ]);
-  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("public");
   
   /*
   From: https://github.com/artstorm/eleventy-plugin-seo

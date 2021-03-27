@@ -2,7 +2,7 @@
 layout: layouts/home.njk
 ---
 <div class="illo-container">
-  <img src="/static/illustration.svg" class="illustration" style="align: right" alt="Eleventy!">
+  <img src="/public/illustration.svg" class="illustration" style="align: right" alt="Eleventy!">
 </div>
 
 # Hello Eleventy!
