@@ -1,5 +1,5 @@
 {
-  "__instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
+  "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
   "title": "Hello Eleventy!",
   "description": "A simple Eleventy blog, built with Glitch. Remix it to get your own.",
   "url": "glitch-default",
