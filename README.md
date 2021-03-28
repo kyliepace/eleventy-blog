@@ -2,7 +2,7 @@
 
 [Eleventy](https://www.11ty.dev/) is a simple static site generator. That means you get all the power of a server-side framework but it builds plain HTML files. 
 
-While you're working in the editor your site will show you files in a local build directory. When you close the editor your site will sleep and run the a `build` script and serve your site as a fast, always-on static site.
+While you're working in the editor your changes will happen 🪄 immediately in the preview window. As you code the site is serving files from a local build directory. When you close the editor your site will run a `build` script then serve the output as a fast and always-on static site.
 
 ## What's in this project?
 
@@ -12,7 +12,7 @@ While you're working in the editor your site will show you files in a local buil
 
 ← `src/`: This folder contains all the files Eleventy will use to build your site.
 
-### Working in the `src/` folder
+### Working in the `src/` folder 📁
 
 ← `src/index.md`, `src/posts.md`, `src/about.md`: These Markdown files are the content for your Home, Posts, and About pages.
 
