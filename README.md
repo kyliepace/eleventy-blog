@@ -18,7 +18,7 @@ While you're working in the editor your site will show you files in a local buil
 
 ← `src/posts/`: These are the Markdown files for the posts that make up your blog.
 
-← `src/seo/seo.json`: When you're ready to share your new site or add a custom domain change settings for social sharing in here.
+← `src/seo/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
 
 ← `src/_includes`: This is where all of your page level layouts go. The **\_** tells you that this is an _eleventy only_ folder.
 
