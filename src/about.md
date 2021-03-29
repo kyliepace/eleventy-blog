@@ -10,4 +10,4 @@ Here you can write some details about you and your new blog:
 - 💥 Detail two
 - 🌈 Detail three
 
-Built with [Eleventy](https://www.11ty.dev/) and [Glitch](https://glitch.com).
+Built with [Eleventy](https://www.11ty.dev/) on [Glitch](https://glitch.com/).
