@@ -2,9 +2,9 @@
 layout: layouts/page.njk
 ---
 
-## About you!
+## About this site
 
-Here you can write some details about yourself: 
+Here you can write some details about you and your new blog: 
 
 - 🎉 Detail one
 - 💥 Detail two
