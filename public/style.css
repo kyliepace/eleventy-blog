@@ -1,7 +1,8 @@
 /******************************************************************************
 START Glitch default styles
-Everything in this section is used
+Everything in this section is used 
 ******************************************************************************/
+/* Basic page style resets */
 * {
   box-sizing: border-box;
 }
@@ -20,30 +21,12 @@ Everything in this section is used
   --font-family-header: "HK Grotesk";
 }
 
-/* Tablet portrait */
-@media (min-width: 768px) {
-  :root {
-  }
-}
-
-/* Tablet Landscape */
-@media (min-width: 1024px) {
-  :root {
-  }
-}
-
-/* Desktop */
-@media (min-width: 1280px) {
-  :root {
-  }
-}
-
+/* Import fonts */
 @font-face {
   font-family: HK Grotesk;
   src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
     format("opentype");
 }
-
 @font-face {
   font-family: HK Grotesk;
   font-weight: bold;
@@ -95,6 +78,9 @@ a:not(.btn--remix):visited {
   text-decoration: none;
   border-style: none;
 }
+.footer a:hover {
+  background: var(--color-primary);
+}
 
 .footer .links {
   padding: 0.5rem 1rem;
@@ -107,18 +93,28 @@ a:not(.btn--remix):visited {
 END Glitch default styles
 ******************************************************************************/
 
-/* Global Layout */
+/* Page structure */
 body {
   font-family: var(--font-family);
   background-color: var(--color-bg);
 }
+.wrapper {
+  min-height: var(--wrapper-height);
+  place-items: normal;
+  margin: 3rem 2rem 0;
+  max-width: 900px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
 
+/* Typography */
 p {
   margin: 0 0 1rem 0;
   line-height: 1.9 !important;
   font-size: 1.15rem;
 }
-
 h1,
 h2,
 h3,
@@ -130,51 +126,43 @@ h5 {
   line-height: 1.1;
   color: var(--color-text-main);
 }
-
 h1 {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   font-size: 5rem;
   display: inline-flex;
 }
-
 h2 {
   font-size: 4rem;
 }
-
 h3 {
   font-size: 2rem;
 }
-
 h4 {
   font-size: 1.5rem;
 }
-
 h5 {
   font-size: 1.25rem;
 }
-
 small,
 .text_small {
   font-size: 0.8rem;
 }
-
 ul > li,
 ol > li {
   margin-bottom: 0.75rem;
   line-height: 1.5;
   font-size: 1rem;
 }
-
 ul {
   padding: 0 0 0 18px;
   margin: 0 0 2rem 0;
 }
-
 ul.no-bullet {
   list-style-type: none;
 }
 
+/* Link styles */
 a:not(.btn--remix):link,
 a:not(.btn--remix):visited {
   text-decoration: none;
@@ -182,23 +170,11 @@ a:not(.btn--remix):visited {
   color: var(--foreground);
   transition: background 0.2s linear;
 }
-
 a:hover {
   background: var(--color-primary);
 }
 
-.wrapper {
-  min-height: var(--wrapper-height);
-  place-items: normal;
-  margin: 3rem 2rem 0;
-  max-width: 900px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
   font-family: HK Grotesk;
@@ -206,15 +182,24 @@ a:hover {
   font-weight: bold;
   line-height: 105%;
 }
-
 .title-md {
   font-size: 56px;
 }
 
 /* Layout: Home */
-
 .home {
   justify-content: left;
+}
+.illo-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.illustration {
+  max-width: 180px;
+  max-height: var(--image-max-width);
+  margin-top: 1rem;
+  margin-right: 2rem;
+  transform: rotate(16deg);
 }
 
 /* Post */
@@ -223,18 +208,4 @@ a:hover {
 }
 .controls {
   margin: 4rem 0 2rem;
-}
-
-/* Positioning illustration */
-.illo-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.illustration {
-  max-width: 180px;
-  max-height: var(--image-max-width);
-  margin-top: 1rem;
-  margin-right: 2rem;
-  transform: rotate(16deg);
 }
