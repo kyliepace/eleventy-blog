@@ -1,16 +1,9 @@
 /******************************************************************************
 START Glitch default styles
-Everything in this section is used 
-******************************************************************************/
-/* Basic page style resets */
-* {
-  box-sizing: border-box;
-}
-[hidden] {
-  display: none !important;
-}
 
-/* Our default values set for mobile */
+All the styles from here to the section 
+******************************************************************************/
+/* Our default values set as CSS variables */
 :root {
   --color-bg: #D7F5EF;
   --color-text-main: #2800FF;
@@ -19,6 +12,14 @@ Everything in this section is used
   --image-max-width: 320px;
   --font-family: "HK Grotesk";
   --font-family-header: "HK Grotesk";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
 }
 
 /* Import fonts */
@@ -50,6 +51,7 @@ Everything in this section is used
   border-radius: 4px;
   text-decoration: none;
   color: #000;
+  white-space: nowrap;
 }
 .btn--remix img {
   margin-right: 0.5rem;
