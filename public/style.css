@@ -23,21 +23,18 @@ Everything in this section is used
 /* Tablet portrait */
 @media (min-width: 768px) {
   :root {
-    
   }
 }
 
 /* Tablet Landscape */
 @media (min-width: 1024px) {
   :root {
-    
   }
 }
 
 /* Desktop */
 @media (min-width: 1280px) {
   :root {
-
   }
 }
 
@@ -83,13 +80,13 @@ Everything in this section is used
   display: flex;
   justify-content: space-between;
   margin: 1rem auto 0;
-  padding: 1rem 0;
+  padding: 1rem 0 0.75rem 0;
   width: 100%;
   border-top: 4px solid #fff;
 }
 
 .footer a:not(.btn--remix):link,
-        a:not(.btn--remix):visited {
+a:not(.btn--remix):visited {
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: normal;
@@ -100,7 +97,7 @@ Everything in this section is used
 }
 
 .footer .links {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .divider {
@@ -109,8 +106,6 @@ Everything in this section is used
 /******************************************************************************
 END Glitch default styles
 ******************************************************************************/
-
-
 
 /* Global Layout */
 body {
@@ -133,7 +128,7 @@ h5 {
   font-family: var(--font-family-header);
   font-weight: 600;
   line-height: 1.1;
-  color: var(--color-text-main);;
+  color: var(--color-text-main);
 }
 
 h1 {
@@ -166,7 +161,7 @@ small,
 
 ul > li,
 ol > li {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   line-height: 1.5;
   font-size: 1rem;
 }
@@ -243,5 +238,3 @@ a:hover {
   margin-right: 2rem;
   transform: rotate(16deg);
 }
-
-
