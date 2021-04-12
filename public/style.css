@@ -11,7 +11,7 @@
   --color-text-main: #2800FF;
   --color-primary: #AFECE0;
   --wrapper-height: 85vh;
-  --image-max-width: 180px;
+  --image-max-width: 320px;
   --font-family: "HK Grotesk";
   --font-family-header: "HK Grotesk";
 }
@@ -48,6 +48,61 @@
   font-weight: bold;
   src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
     format("opentype");
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 100%;
+  border-top: 4px solid #fff;
+}
+
+.footer a:not(.btn--remix):link,
+        a:not(.btn--remix):visited {
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #000;
+  text-decoration: none;
+  border-style: none;
+}
+
+.footer .links {
+  padding: .5rem 1rem;
+}
+
+.divider {
+  padding: 0 1rem;
+}
+
+/* Our remix on glitch button */
+
+.btn--remix {
+  font-family: HK Grotesk;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  align-items: center;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+}
+
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+
+.btn--remix:hover {
+  background-color: #D0FFF1;
 }
 
 /* Global Layout */
@@ -175,7 +230,7 @@ a:hover {
 }
 
 .illustration {
-  max-width: 100%;
+  max-width: 180px;
   max-height: var(--image-max-width);
   margin-top: 1rem;
   margin-right: 2rem;
@@ -183,57 +238,3 @@ a:hover {
 }
 
 
-/* Navigation grid */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 1rem 0;
-  width: 100%;
-  border-top: 4px solid #fff;
-}
-
-.footer a:not(.btn--remix):link,
-        a:not(.btn--remix):visited {
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: #000;
-  text-decoration: none;
-  border-style: none;
-}
-
-.footer .links {
-  padding: .5rem 1rem;
-}
-
-.divider {
-  padding: 0 1rem;
-}
-
-/* Our remix on glitch button */
-
-.btn--remix {
-  font-family: HK Grotesk;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  font-weight: 500;
-  align-items: center;
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000;
-}
-
-.btn--remix img {
-  margin-right: 0.5rem;
-}
-
-.btn--remix:hover {
-  background-color: #D0FFF1;
-}
