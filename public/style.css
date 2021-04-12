@@ -16,7 +16,6 @@
   --font-family-header: "HK Grotesk";
 }
 
-
 /* Tablet portrait */
 @media (min-width: 768px) {
   :root {
@@ -169,12 +168,27 @@ a:hover {
   margin: 4rem 0 2rem;
 }
 
+/* Positioning illustration */
+.illo-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: 1rem;
+  margin-right: 2rem;
+  transform: rotate(16deg);
+}
+
+
 /* Navigation grid */
 .footer {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding: 1rem 0;
   width: 100%;
   border-top: 4px solid #fff;
 }
@@ -222,18 +236,4 @@ a:hover {
 
 .btn--remix:hover {
   background-color: #D0FFF1;
-}
-
-/* Positioning illustration */
-.illo-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.illustration {
-  max-width: 100%;
-  max-height: var(--image-max-width);
-  margin-top: 1rem;
-  margin-right: 2rem;
-  transform: rotate(16deg);
 }
