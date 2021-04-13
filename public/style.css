@@ -211,6 +211,9 @@ a:hover {
 .post {
   place-items: normal;
 }
+.postTitle {
+  line-height: 90%;
+}
 .controls {
   margin: 4rem 0 2rem;
 }
