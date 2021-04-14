@@ -105,13 +105,14 @@ body {
 }
 .wrapper {
   min-height: var(--wrapper-height);
-  place-items: normal;
+  place-items: center;
   margin: 3rem 2rem 0;
-  max-width: 900px;
 }
 .content {
   display: flex;
   flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Typography */
