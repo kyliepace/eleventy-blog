@@ -161,7 +161,7 @@ ol > li {
 }
 ul {
   padding: 0 0 0 18px;
-  margin: 0 0 2rem 0;
+  margin: 0;
 }
 ul.no-bullet {
   list-style-type: none;
@@ -213,6 +213,7 @@ a:hover {
 }
 .postTitle {
   line-height: 1.1;
+  margin-bottom: 2rem;
 }
 .controls {
   margin: 4rem 0 2rem;
