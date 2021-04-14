@@ -55,6 +55,7 @@ to this section's matching END comment to see page-specific styles.
   text-decoration: none;
   color: #000;
   white-space: nowrap;
+  margin-left: auto;
 }
 .btn--remix img {
   margin-right: 0.5rem;
@@ -89,7 +90,7 @@ a:not(.btn--remix):visited {
 }
 
 .footer .links {
-  padding: 0.5rem 1rem ;
+  padding: 0.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 
