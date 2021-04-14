@@ -117,7 +117,7 @@ body {
 /* Typography */
 p {
   margin: 0 0 1rem 0;
-  line-height: 1.9 !important;
+  line-height: 1.5 !important;
   font-size: 1.15rem;
 }
 h1,
@@ -185,7 +185,7 @@ a:hover {
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: bold;
-  line-height: 105%;
+  line-height: 1.5;
 }
 .title-md {
   font-size: 56px;
@@ -212,7 +212,7 @@ a:hover {
   place-items: normal;
 }
 .postTitle {
-  line-height: 90%;
+  line-height: 1.1;
 }
 .controls {
   margin: 4rem 0 2rem;
