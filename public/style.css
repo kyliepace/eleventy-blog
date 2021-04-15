@@ -129,7 +129,7 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 3rem 0 .8rem;
+  margin: 2rem 0 .8rem;
   font-family: var(--font-family-header);
   font-weight: 600;
   line-height: 1.1;
@@ -220,8 +220,8 @@ a:hover {
   font-size: 4rem;
   color: #000;
   line-height: 1.1;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .controls {
-  margin: 4rem 0 2rem;
+  margin: 2rem 0 2rem;
 }

@@ -8,8 +8,8 @@ templateClass: tmpl-home
     <h1 class='postTitle'>{{title}}</h1>
 
     {{ content | safe }}
-    {% if prevPost.url %}
     <div class="controls">
+    {% if prevPost.url %}
       <p>
         <strong>Previous post</strong>: 
         <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
