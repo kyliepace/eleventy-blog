@@ -122,7 +122,7 @@ body {
 p {
   margin: 0 0 1rem 0;
   line-height: 1.5 !important;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 h1,
 h2,
@@ -140,6 +140,7 @@ h1 {
   margin-bottom: 1.75rem;
   font-size: 5rem;
   display: inline-flex;
+  color: #2800FF;
 }
 h2 {
   font-size: 4rem;
@@ -161,7 +162,7 @@ ul > li,
 ol > li {
   margin-bottom: 0.75rem;
   line-height: 1.5;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 ul {
   padding: 0 0 0 18px;
@@ -195,10 +196,6 @@ a:hover {
   font-size: 56px;
 }
 
-h1 {
-  color: #2800FF;
-}
-
 /* Layout: Home */
 .home {
   justify-content: left;
@@ -220,8 +217,10 @@ h1 {
   place-items: normal;
 }
 .postTitle {
+  font-size: 4rem;
+  color: #000;
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .controls {
   margin: 4rem 0 2rem;
