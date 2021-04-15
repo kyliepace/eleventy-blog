@@ -195,6 +195,10 @@ a:hover {
   font-size: 56px;
 }
 
+h1 {
+  color: #2800FF;
+}
+
 /* Layout: Home */
 .home {
   justify-content: left;
