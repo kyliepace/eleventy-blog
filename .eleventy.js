@@ -34,14 +34,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
-
-  /**
-   https://github.com/11ty/eleventy-base-blog/pull/34
-   https://www.browsersync.io/docs/options#option-ghostMode
-   
-   Noticed by @clottman - we do NOT want to be transmitting the full browsersync
-   to all users. I 
-  */
   
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
   
