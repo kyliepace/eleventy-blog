@@ -1,7 +1,7 @@
 ---
 title: Next Steps
 description: Alter your site config
-date: 2021-03-13
+date: 2021-06-20
 tags:
   - posts
 layout: layouts/post.njk
@@ -22,7 +22,7 @@ const coll = collection
       .getFilteredByTag("posts");
 ```
 
-Extend this line to sort the posts using the `date` property in the front matter:
+Alter this line to sort the posts using the `date` property in the front matter (find the comment that includes `EDIT HERE`):
 
 ```
 const coll = collection
@@ -32,4 +32,4 @@ const coll = collection
 
 The rest of the code in the function sets the posts up to point to each other so that the reader can progress through them.
 
-Take a look at the Home or Posts page in the preview–but before you do that a word of caution: ⚠️ __your site posts will reverse in order so that most recent is first, so make sure you remember to read "Taking your site to the next level" for more tips!__
+Take a look at the Home or Posts page in the preview!

@@ -1,7 +1,7 @@
 ---
 title: Getting started with Eleventy on Glitch!
 description: You won't believe how easy it can be.
-date: 2021-03-09
+date: 2021-02-03
 tags:
   - posts
 layout: layouts/post.njk

@@ -1,10 +1,11 @@
 const { DateTime } = require("luxon");
 const pluginSEO = require("eleventy-plugin-seo");
 
-/*
-  This is the JavaScript code that determines the config for your Eleventy site
-  - You can add lost of customization here to define how the site builds your content
-  - Try extending it to suit your needs!
+/**
+* This is the JavaScript code that determines the config for your Eleventy site
+*
+* You can add lost of customization here to define how the site builds your content
+* Try extending it to suit your needs!
 */
 
 module.exports = function(eleventyConfig) {
@@ -24,8 +25,7 @@ module.exports = function(eleventyConfig) {
   ]);
   eleventyConfig.addPassthroughCopy("public");
 
-  /*
-  From: https://github.com/artstorm/eleventy-plugin-seo
+  /* From: https://github.com/artstorm/eleventy-plugin-seo
   
   Adds SEO settings to the top of all pages
   The "glitch-default" bit allows someone to set the url in seo.json while
@@ -44,18 +44,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
 
-  /*
-    Build the collection of posts to list in the site
-    - Read the Next Steps post to learn how to extend this
+  /* Build the collection of posts to list in the site
+     - Read the Next Steps post to learn how to extend this
   */
   eleventyConfig.addCollection("posts", function(collection) {
     
-    /* 
-      The posts collection includes all posts that list 'posts' in the front matter 'tags'
-      https://www.11ty.dev/docs/collections/
+    /* The posts collection includes all posts that list 'posts' in the front matter 'tags'
+       - https://www.11ty.dev/docs/collections/
     */
     
-    // Extend here with code from Next Steps page to reverse chronological order
+    // EDIT HERE WITH THE CODE FROM THE NEXT STEPS PAGE TO REVERSE CHRONOLOGICAL ORDER
     // (inspired by https://github.com/11ty/eleventy/issues/898#issuecomment-581738415)
     const coll = collection
       .getFilteredByTag("posts");
