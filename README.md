@@ -34,6 +34,8 @@ ___Want a basic template version of this project to build your own Eleventy app?
 
 With the site preview open on the right and the Glitch editor open on the left, navigate through the initial blog posts to learn more and carry out some development on your Eleventy site!
 
+Check out `TODO.md` for some more optional next steps.
+
 ![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
 ## You built this with Glitch!
