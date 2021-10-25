@@ -1,6 +1,6 @@
 dependencies:
-  eleventy-plugin-seo: 0.5.1
-  luxon: 1.26.0
+  eleventy-plugin-seo: 0.5.2
+  luxon: 2.0.2
 devDependencies:
   '@11ty/eleventy': 0.11.1
 packages:
@@ -727,13 +727,13 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
-  /eleventy-plugin-seo/0.5.1:
+  /eleventy-plugin-seo/0.5.2:
     dependencies:
       html-entities: 1.4.0
       lodash: 4.17.21
     dev: false
     resolution:
-      integrity: sha512-rNzVeGGsUWBOW74JaP/7po5EbYttF8+fMMXwYzhkV6gYFXOwouVnadrHoyTcHJLwh9kJXx5WAOPIBSyghYmXPA==
+      integrity: sha512-saAWnrQrMc/dP6nimCbvAlumohfBrDI7IrpkN/OJoxvLxcOsyWrA+XMR+3lWLVAkuwC1SyA5cbunr1u8jkFK/A==
   /emitter-mixin/0.0.3:
     dev: true
     resolution:
@@ -1423,8 +1423,13 @@ packages:
     resolution:
       integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   /luxon/1.26.0:
+    dev: true
     resolution:
       integrity: sha512-+V5QIQ5f6CDXQpWNICELwjwuHdqeJM1UenlZWx5ujcRMc9venvluCjFb4t5NYLhb6IhkbMVOxzVuOqkgMxee2A==
+  /luxon/2.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-ZRioYLCgRHrtTORaZX1mx+jtxKtKuI5ZDvHNAmqpUzGqSrR+tL4FVLn/CUGMA3h0+AKD1MAxGI5GnCqR5txNqg==
   /map-cache/0.2.2:
     dev: true
     engines:
@@ -2538,5 +2543,5 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@11ty/eleventy': ^0.11.1
-  eleventy-plugin-seo: ^0.5.1
-  luxon: ^1.26.0
+  eleventy-plugin-seo: ^0.5.2
+  luxon: ^2.0.2

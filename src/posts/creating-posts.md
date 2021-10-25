@@ -27,7 +27,7 @@ Add the following content to your new post, including the front matter and one l
 ---
 title: My First Blog Post
 description: Writing my first post on my new Eleventy blog
-date: 2021-03-20
+date: 2030-01-01
 tags:
   - posts
 layout: layouts/post.njk
@@ -36,6 +36,8 @@ layout: layouts/post.njk
 OMG this is my first post!
 
 ```
+
+_Feel free to change the date to today's date if you like._
 
 Go to Posts or Home to see your new post added, and open it to see how the content appears, then come back here to __It's time to write some posts__!
 
