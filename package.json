@@ -1,7 +1,7 @@
 {
-  "name": "hello-eleventy",
+  "name": "kylie-tech-blog",
   "version": "0.0.1",
-  "description": "A simple blog, set up with Eleventy.",
+  "description": "A simple tech blog, set up with Eleventy.",
   "scripts": {
     "start": "eleventy --serve",
     "build": "NODE_ENV=production eleventy"
@@ -19,15 +19,12 @@
     "node": "12"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-eleventy"
-  },
-  "glitch": {
-    "projectType": "generated_static"
+    "url": ""
   },
   "license": "MIT",
   "keywords": [
     "node",
-    "glitch",
-    "express"
+    "blog",
+    "eleventy"
   ]
 }

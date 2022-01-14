@@ -2,6 +2,6 @@
 layout: layouts/posts.njk
 ---
 
-## Posts
+## 📝 Posts
 
-Write some details about your post lists. Or don't, and remove this!
+Oh my god, she's insane

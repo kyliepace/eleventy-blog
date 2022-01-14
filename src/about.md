@@ -2,12 +2,15 @@
 layout: layouts/page.njk
 ---
 
-## About this site
+## About my brain
 
-Here you can write some details about you and your new blog: 
+I am a thirtysomething femalesomething JavaScript developer. 
 
-- 🎉 I love blogging
-- 💥 I built this site using [Eleventy](https://www.11ty.dev/) on [Glitch](https://glitch.com/)
+- 🎉 I love building things
+- 📊 Started coding as an environmental scientist
+- 💬 Undergrad degree in linguistics
+- 💥 I built this site using [Eleventy](https://www.11ty.dev/) 
+- 🇬🇧 UK/US dual citizen
 - 🌈 Thanks for reading!
 
-You can also make your project available for other people to remix in Glitch! 🎏✨
+

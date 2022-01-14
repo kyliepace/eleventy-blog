@@ -1,7 +1,7 @@
 ---
-title: Next Steps
+title: Thoughts On Remote Working 2 Years Later
 description: Alter your site config
-date: 2021-06-20
+date: 2022-01-04
 tags:
   - posts
 layout: layouts/post.njk

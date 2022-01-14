@@ -1,7 +1,7 @@
 ---
-title: Taking your site to the next level
-description: What can you build on top of this?
-date: 2021-05-15
+title: Building with eleventy
+description: How I am building this
+date: 2022-01-02
 tags:
   - posts
 layout: layouts/post.njk

@@ -1,7 +1,7 @@
 ---
-title: It's time to write some posts
+title: My Favourite Typescript Framework - NestJS
 description: Add posts and your site build will publish them
-date: 2021-03-09
+date: 2022-01-10
 tags:
   - posts
 layout: layouts/post.njk

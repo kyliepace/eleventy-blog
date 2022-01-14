@@ -34,9 +34,7 @@ module.exports = function(eleventyConfig) {
   still letting it have a proper glitch.me address via PROJECT_DOMAIN
   */
   const seo = require("./src/seo.json");
-  if (seo.url === "glitch-default") {
-    seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
-  }
+ 
   eleventyConfig.addPlugin(pluginSEO, seo);
 
   // Filters let you modify the content https://www.11ty.dev/docs/filters/
@@ -55,8 +53,6 @@ module.exports = function(eleventyConfig) {
        - https://www.11ty.dev/docs/collections/
     */
     
-    // EDIT HERE WITH THE CODE FROM THE NEXT STEPS PAGE TO REVERSE CHRONOLOGICAL ORDER
-    // (inspired by https://github.com/11ty/eleventy/issues/898#issuecomment-581738415)
     const coll = collection
       .getFilteredByTag("posts")
       .sort((a, b) => b.data.date - a.data.date);
