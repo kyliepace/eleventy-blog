@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "eleventy-plugin-seo": "0.5.2",
+    "eleventy-plugin-social-img": "^1.2.6",
     "luxon": "2.3.0"
   },
   "devDependencies": {
