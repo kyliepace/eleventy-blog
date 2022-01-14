@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const pluginSEO = require("eleventy-plugin-seo");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 /**
 * This is the JavaScript code that determines the config for your Eleventy site
@@ -24,6 +25,7 @@ module.exports = function(eleventyConfig) {
     "woff2"
   ]);
   eleventyConfig.addPassthroughCopy("public");
+    eleventyConfig.addPlugin(syntaxHighlight);
 
   /* From: https://github.com/artstorm/eleventy-plugin-seo
   

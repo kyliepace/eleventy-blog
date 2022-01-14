@@ -8,3 +8,10 @@ layout: layouts/post.njk
 ---
 
 OMG this is my first post!
+
+Add code
+```
+const name = 'kylie'
+```
+
+will this auto-reload?
