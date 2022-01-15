@@ -1,5 +1,5 @@
 ---
-title: Fav Git Aliases for Quicker Commits
+title: Fav Git aliases for quicker commits
 description: Quicken your github steps with these alias configs
 date: 2022-01-14
 tags:

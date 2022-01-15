@@ -1,5 +1,5 @@
 ---
-title: Building with eleventy
+title: Choosing eleventy over a CMS for Jamstack blog
 description: why I chose markdown over graphQL for my little blog
 date: 2022-01-02
 tags:
@@ -33,7 +33,7 @@ Here is what the beginning of this very file looks like:
 
 ```
 ---
-title: Building with eleventy
+title: Choosing eleventy over a CMS for Jamstack blog
 description: why I chose markdown over graphQL for my little blog
 date: 2022-01-02
 tags:
@@ -44,11 +44,10 @@ layout: layouts/post.njk
 I generally avoid markdown. 
 ```
 
-At some point I'd like to modify this so that github can insert the date whenever a post is created or updated. The templating engine transforms this into html
-
+At some point I'd like to modify this so that github can insert the date whenever a post is created or updated. The templating engine transforms this into html.
 
 I don't have many opinions about templating languages as my enthusiasm for them ranges from middling to avoid at all costs.
 
-Honestly what I've enjoyed about eleventy so far was that their blog demo which I forked had good examples that I really haven't had to touch. 
+Honestly what I've enjoyed about eleventy so far was that their blog demo which I forked had good examples that I really haven't had to touch. I'm sure if I need to make a change, it will bug me to no end to not be able to use es6. 
 
-Cheers to laziness - it'll get us far.
+So, I'd better keep things simple.

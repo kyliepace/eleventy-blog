@@ -1,5 +1,5 @@
 ---
-title: Thoughts On Remote Working 2 Years Later
+title: Thoughts on remote working 2 years on
 description: Alter your site config
 date: 2022-01-04
 tags:
