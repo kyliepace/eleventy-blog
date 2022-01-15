@@ -8,6 +8,8 @@
     <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Code Cadette JavaScript Tech Blog" />
+    <meta name="author" content="Kylie Pace />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
     <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
     <title>Building with eleventy - Code Cadette</title>
 
@@ -15,21 +17,21 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="undefined">
 
-<link rel="canonical" href="/posts/building-with-eleventy/">
+<link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/building-with-eleventy/">
 
 <meta property="og:title" content="Building with eleventy - Code Cadette">
 <meta property="og:type" content="article">
 
-<meta property="og:url" content="/posts/building-with-eleventy/">
+<meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/building-with-eleventy/">
 <meta property="og:description" content="A nodejs tech blog">
-
+<meta property="og:image" content="💪🏼">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="/posts/building-with-eleventy/">
+<meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/building-with-eleventy/">
 <meta name="twitter:title" content="Building with eleventy - Code Cadette">
 <meta name="twitter:description" content="A nodejs tech blog">
-
+<meta name="twitter:image" content="💪🏼">
 
 
   </head>
@@ -42,52 +44,57 @@
 
 
 <div class="wrapper post">
-  <div>
+  <div class="title">
+
     
     <h1 class='postTitle'>Building with eleventy</h1>
 
     <p>
-      <em>How I am building this</em>
+      <em>why I chose markdown over graphQL for my little blog</em>
     </p>    
+  </div>
+  <div>
     
-    <p>The Eleventy ecosystem is <em>huge</em>! There are <a href="https://www.11ty.dev/docs/starter/">official and community</a> starters for almost any Glitch project you can dream up.</p>
-<p>The best part is, no matter what starter you use, as long as you set your eleventy app to <a href="https://help.glitch.com/kb/article/111-what-is-eleventy-11ty-and-how-can-i-use-it-on-glitch/">generated static site</a>, you'll be able to take advantage of the feature on Glitch!</p>
-<ul>
-<li>Right now, your site is <strong>live on the web</strong>, with a real URL (a secure HTTPS address 🔒) that updates as soon as you make changes to your site or app.</li>
-</ul>
-<blockquote>
-<p>💡 In the Glitch editor, click your project name in the top left, and in the menu that opens, select the name and type a new one. Your project will be live at the new address instantly.</p>
-</blockquote>
-<ul>
-<li><strong>Add a domain</strong> to your new Glitch project! Just go to the <strong>Tools</strong> menu in the Glitch editor, and click on <strong>Custom Domains</strong>.</li>
-<li>Use the <strong>Share</strong> button in the editor to invite others in to edit your new Eleventy project by typing in their email or Glitch username.</li>
-</ul>
-<blockquote>
-<p>💡 Make your code, or even your entire app, private to just those you invite, by <a href="https://glitch.com/pricing">upgrading your Glitch account</a>.</p>
-</blockquote>
-<ul>
-<li>Use a <strong>full-powered Linux command line</strong> to manage your new Glitch project. Go to the <strong>Tools</strong> menu in the Glitch editor, and click <strong>Terminal</strong> to peek under the hood.</li>
-</ul>
-<p>There are lots of <a href="https://www.11ty.dev/docs/plugins/">Eleventy plugins</a> you can also add to your project.</p>
-<p>Some additional developments to try:</p>
-<ul>
-<li>Add a UI library like <a href="https://tailwindcss.com/">tailwind</a></li>
-<li>Use the <a href="https://www.11ty.dev/docs/plugins/image/">Eleventy image library</a> to optimize your blog images</li>
-</ul>
+    <p>I generally avoid markdown.</p>
+<p>I'm a backend developer - I like databases, json, APIs. Storing content in files and treating github as my database just doesn't scale, and I've been on those projects before where managers try to make it.</p>
+<p>But, I know as a developer I'm also prone to shiny overkill. Why be up and running in five minutes when I could orchestrate an event-driven system in five hours that, who knows, could pivot into the next hot niche app?</p>
+<p>I've enjoyed many a combination of static site generator and CMS. I like Strapi and Retool for being able to connect them to your own database. I love Crystallize for making it easy to manage products and ecommerce. Ghost is great if your dad is the one writing and publishing the content. Once upon a time I even had a skillshare video that made me a few bucks every month all about setting up a Hugo blog. Or was it Hexo?</p>
+<p>😜</p>
+<p>So, I definitely feel spoiled for choice and detrimentally so, because I spend more time trying each tool than I do ever writing posts. Maybe, my attraction to the sleekest database integration and scalability wasn't helping me do the actual thing I'd set out to do.</p>
+<p>I decided to bite the templating/markdown bullet so I could just build and deploy directly from github, for free. I went with Eleventy because it really is seamless to get up and running.</p>
 <p>🚀</p>
+<p>There are <a href="https://www.11ty.dev/docs/starter/">official and community</a> starters and a scattering of to-the-point <a href="https://www.11ty.dev/docs/plugins/">plugins</a> to be flexible, but just flexible enough to keep me focused. I'm not tapping into any React useEffects, and the css is basic. No less, let alone styled components (which is an amazing library).</p>
+<p>I've kept <a href="https://github.com/kyliepace/eleventy-blog">the repo</a> for this blog public, in case you want to check out the details.</p>
+<p>I don't think that eleventy does much differently about the tried-and-trusted method of rendering static pages from markdown.</p>
+<p>Here is what the beginning of this very file looks like:</p>
+<pre><code>---
+title: Building with eleventy
+description: why I chose markdown over graphQL for my little blog
+date: 2022-01-02
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
+I generally avoid markdown. 
+</code></pre>
+<p>At some point I'd like to modify this so that github can insert the date whenever a post is created or updated. The templating engine transforms this into html</p>
+<p>I don't have many opinions about templating languages as my enthusiasm for them ranges from middling to avoid at all costs.</p>
+<p>Honestly what I've enjoyed about eleventy so far was that their blog demo which I forked had good examples that I really haven't had to touch.</p>
+<p>Cheers to laziness - it'll get us far.</p>
 
     <div class="controls">
     
     
       <p>
         <strong>Previous post</strong>: 
-        <a class="previous" href="/posts/remote-working/">Thoughts On Remote Working 2 Years Later</a>
+        <a class="previous" href="/eleventy-blog/posts/remote-working/">Thoughts On Remote Working 2 Years Later</a>
       </p>
     
     
       <p>
         <strong>Next post</strong>: 
-        <a class="next" href="/posts/which-cms/">Choosing a CMS for Jamstack</a>
+        <a class="next" href="/eleventy-blog/posts/which-cms/">Choosing a CMS for Jamstack</a>
       </p>
     
     </div>

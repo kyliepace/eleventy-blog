@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Code Cadette JavaScript Tech Blog" />
+    <meta name="author" content="Kylie Pace />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
+    <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
+    <title>Fav Git Aliases for Quicker Commits - Code Cadette</title>
+
+<meta name="description" content="A nodejs tech blog">
+<meta name="robots" content="index,follow">
+<meta name="author" content="undefined">
+
+<link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/git-aliases/">
+
+<meta property="og:title" content="Fav Git Aliases for Quicker Commits - Code Cadette">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/git-aliases/">
+<meta property="og:description" content="A nodejs tech blog">
+<meta property="og:image" content="💪🏼">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/git-aliases/">
+<meta name="twitter:title" content="Fav Git Aliases for Quicker Commits - Code Cadette">
+<meta name="twitter:description" content="A nodejs tech blog">
+<meta name="twitter:image" content="💪🏼">
+
+
+  </head>
+  <body>
+  <main>
+    
+    
+  
+    
+
+
+<div class="wrapper post">
+  <div class="title">
+
+    
+    <h1 class='postTitle'>Fav Git Aliases for Quicker Commits</h1>
+
+    <p>
+      <em>Quicken your github steps with these alias configs</em>
+    </p>    
+  </div>
+  <div>
+    
+    <p>When I finally set these up after years of coding, I went home and mourned the lost time I'd been spending typing out <code>git add .</code> <code>git commit</code>, over and over again each day.</p>
+<p>But every time I switch machines I have to dig these up again, so here are my favourite git aliases, for your (and my) reference</p>
+<blockquote>
+<p>💡 note - I add these using the command line, and set them globally</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">alias name</th>
+<th style="text-align:left">task</th>
+<th style="text-align:left">code to add</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">amend</td>
+<td style="text-align:left">add a change to the previous commit</td>
+<td style="text-align:left"><code>git config --global alias.amend '!git add . &amp;&amp; git commit --amend</code></td>
+</tr>
+<tr>
+<td style="text-align:left">commit changes</td>
+<td style="text-align:left">add . &amp;&amp; commit</td>
+<td style="text-align:left"><code>git config --global.ready '!git add . &amp;&amp; git commit -m'</code></td>
+</tr>
+<tr>
+<td style="text-align:left">send</td>
+<td style="text-align:left">push to origin</td>
+<td style="text-align:left"><code>git config --global.send '!git push origin HEAD'</code></td>
+</tr>
+<tr>
+<td style="text-align:left">co</td>
+<td style="text-align:left">create new branch</td>
+<td style="text-align:left"><code>git config --global.co '!git checkout -b'</code></td>
+</tr>
+<tr>
+<td style="text-align:left">del</td>
+<td style="text-align:left">delete a branch</td>
+<td style="text-align:left"><code>git config --global.del '!git branch -D'</code></td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br>
+Check out your aliases with <code>git config --list | grep alias</code></p>
+<p>Then when I'm githubbing in the terminal, instead of typing <br>
+<code>git add . &amp;&amp; git commit -m &quot;commit message&quot;</code>, <br>
+I can shorten that to <br>
+<code>git ready &quot;commit message&quot;</code></p>
+
+    <div class="controls">
+    
+    
+    
+      <p>
+        <strong>Next post</strong>: 
+        <a class="next" href="/eleventy-blog/posts/choosing-nestjs/">My Favourite Typescript Framework - NestJS</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/eleventy-blog/">🪴 Home</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/posts">📝 Posts</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/about">🕶 About</a>
+        </div>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>

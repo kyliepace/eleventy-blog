@@ -8,6 +8,8 @@
     <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Code Cadette JavaScript Tech Blog" />
+    <meta name="author" content="Kylie Pace />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
     <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
     <title>My Favourite Typescript Framework - NestJS - Code Cadette</title>
 
@@ -15,21 +17,21 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="undefined">
 
-<link rel="canonical" href="/posts/choosing-nestjs/">
+<link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/choosing-nestjs/">
 
 <meta property="og:title" content="My Favourite Typescript Framework - NestJS - Code Cadette">
 <meta property="og:type" content="article">
 
-<meta property="og:url" content="/posts/choosing-nestjs/">
+<meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/choosing-nestjs/">
 <meta property="og:description" content="A nodejs tech blog">
-
+<meta property="og:image" content="💪🏼">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="/posts/choosing-nestjs/">
+<meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/choosing-nestjs/">
 <meta name="twitter:title" content="My Favourite Typescript Framework - NestJS - Code Cadette">
 <meta name="twitter:description" content="A nodejs tech blog">
-
+<meta name="twitter:image" content="💪🏼">
 
 
   </head>
@@ -42,47 +44,44 @@
 
 
 <div class="wrapper post">
-  <div>
+  <div class="title">
+
     
     <h1 class='postTitle'>My Favourite Typescript Framework - NestJS</h1>
 
     <p>
       <em>Add posts and your site build will publish them</em>
     </p>    
+  </div>
+  <div>
     
     <p>The body of your posts will be in Markdown. With Glitch, you can edit Markdown right in the editor, and the preview will update as you type. While you work you can switch between editing Markdown and seeing a preview of your formatted text by toggling the <strong>Markdown</strong> button just above the editor window.</p>
 <blockquote>
 <p>💡 Are the live updates to your site distracting you while you write or work? Go to the project menu in the top-left of your Glitch editor, and uncheck the box for <strong>Refresh App on Changes</strong>.</p>
 </blockquote>
-<h3>Post metadata</h3>
-<p>Above the content of your posts, you'll include front matter that tells Eleventy about details like the title and date.</p>
-<p>Any values you include in the front matter are accessible in the template (e.g. <code>_includes/layouts/post.njk</code>). The template can build this data into the HTML page along with your post content.</p>
-<h3>Add a post!</h3>
-<p>Click the three little dots next to the <code>/posts</code> folder in Glitch and add a new file, naming it <code>my-first-post.md</code>.</p>
-<p>Add the following content to your new post, including the front matter and one line of text content:</p>
-<pre><code>---
-title: My First Blog Post
-description: Writing my first post on my new Eleventy blog
-date: 2030-01-01
-tags:
-  - posts
-layout: layouts/post.njk
----
-
-OMG this is my first post!
-
-</code></pre>
-<p><em>Feel free to change the date to today's date if you like.</em></p>
-<p>Go to Posts or Home to see your new post added, and open it to see how the content appears, then come back here to <strong>It's time to write some posts</strong>!</p>
-<p>You might have noticed that your new post was added at the end of the list–we'll change that soon.</p>
+<h3>The problem</h3>
+<p>I had been writing backend code like it was already minified and compiled, and that was a headache for colleagues, for testing, and for myself!</p>
+<h3>Attempts at cleaning up my life</h3>
+<p>Ok, I thought, these services just need some organization. I started by trying to be consistent in how I divided files amongst folders. Maybe all singletons go together here, and all database-related code here. Is that better?</p>
+<p>My colleague started talking about design patterns. &quot;Wouldn't this work well as an adapter? Shouldn't this just be a factory, and this part a builder?&quot;</p>
+<p>Er...was he making these words up?</p>
+<p>And that's how <a href="https://refactoring.guru/">refactoring guru</a> came into my life, and we refactored several repos using patterns that would be recognizable to more brains than just my own.</p>
+<h3>The ah-hah</h3>
+<p>As soon as my team was rolling with consistent design patterns, someone posted a link to <a href="https://nestjs.com/">NestJs</a></p>
+<p>Now, maybe this shows that there is truth to the stereotype of JavaScript having turned into a wild-west type environment, because being handed a framework that anticipates more needs than just wiring up an api (hi express) (not that there's anything wrong with an api) felt like being handed keys to a castle.</p>
 
     <div class="controls">
     
     
+      <p>
+        <strong>Previous post</strong>: 
+        <a class="previous" href="/eleventy-blog/posts/git-aliases/">Fav Git Aliases for Quicker Commits</a>
+      </p>
+    
     
       <p>
         <strong>Next post</strong>: 
-        <a class="next" href="/posts/remote-working/">Thoughts On Remote Working 2 Years Later</a>
+        <a class="next" href="/eleventy-blog/posts/remote-working/">Thoughts On Remote Working 2 Years Later</a>
       </p>
     
     </div>
