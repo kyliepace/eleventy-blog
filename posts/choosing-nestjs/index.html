@@ -11,7 +11,7 @@
     <meta name="author" content="Kylie Pace />
     <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
     <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
-    <title>My Favourite Typescript Framework - NestJS - Code Cadette</title>
+    <title>My favourite Typescript framework - NestJS - Code Cadette</title>
 
 <meta name="description" content="A nodejs tech blog">
 <meta name="robots" content="index,follow">
@@ -19,7 +19,7 @@
 
 <link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/choosing-nestjs/">
 
-<meta property="og:title" content="My Favourite Typescript Framework - NestJS - Code Cadette">
+<meta property="og:title" content="My favourite Typescript framework - NestJS - Code Cadette">
 <meta property="og:type" content="article">
 
 <meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/choosing-nestjs/">
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary">
 
 <meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/choosing-nestjs/">
-<meta name="twitter:title" content="My Favourite Typescript Framework - NestJS - Code Cadette">
+<meta name="twitter:title" content="My favourite Typescript framework - NestJS - Code Cadette">
 <meta name="twitter:description" content="A nodejs tech blog">
 <meta name="twitter:image" content="💪🏼">
 
@@ -47,41 +47,86 @@
   <div class="title">
 
     
-    <h1 class='postTitle'>My Favourite Typescript Framework - NestJS</h1>
+    <h1 class='postTitle'>My favourite Typescript framework - NestJS</h1>
 
     <p>
-      <em>Add posts and your site build will publish them</em>
+      <em>How I left behind the chaos</em>
     </p>    
   </div>
   <div>
     
-    <p>The body of your posts will be in Markdown. With Glitch, you can edit Markdown right in the editor, and the preview will update as you type. While you work you can switch between editing Markdown and seeing a preview of your formatted text by toggling the <strong>Markdown</strong> button just above the editor window.</p>
-<blockquote>
-<p>💡 Are the live updates to your site distracting you while you write or work? Go to the project menu in the top-left of your Glitch editor, and uncheck the box for <strong>Refresh App on Changes</strong>.</p>
-</blockquote>
-<h3>The problem</h3>
+    <h3>The problem</h3>
 <p>I had been writing backend code like it was already minified and compiled, and that was a headache for colleagues, for testing, and for myself!</p>
 <h3>Attempts at cleaning up my life</h3>
 <p>Ok, I thought, these services just need some organization. I started by trying to be consistent in how I divided files amongst folders. Maybe all singletons go together here, and all database-related code here. Is that better?</p>
 <p>My colleague started talking about design patterns. &quot;Wouldn't this work well as an adapter? Shouldn't this just be a factory, and this part a builder?&quot;</p>
 <p>Er...was he making these words up?</p>
-<p>And that's how <a href="https://refactoring.guru/">refactoring guru</a> came into my life, and we refactored several repos using patterns that would be recognizable to more brains than just my own.</p>
-<h3>The ah-hah</h3>
+<p>And that's how <a href="https://refactoring.guru/">refactoring guru</a> came into my life, and we refactored several repos using patterns that would be recognizable to more brains than just my own. And we got that business logic far, far away from the controller.</p>
+<h3>💡 The ah-hah</h3>
 <p>As soon as my team was rolling with consistent design patterns, someone posted a link to <a href="https://nestjs.com/">NestJs</a></p>
 <p>Now, maybe this shows that there is truth to the stereotype of JavaScript having turned into a wild-west type environment, because being handed a framework that anticipates more needs than just wiring up an api (hi express) (not that there's anything wrong with an api) felt like being handed keys to a castle.</p>
+<p>We had <em>just</em> struggled for a month adding trace-level logging to one project, something that seemed so useful and yet so foreign to javascript server-side code, and voilà, nest can do this.</p>
+<p>What makes Nest feel so powerful, other than just giving JavaScript developers a system for organization, is the full embrace of dependency injection via <code>@Module</code> classes.</p>
+<p>I found I did need to play around to understand how to use these, but the core organization principle of NestJS is to set everything up through these module classes:</p>
+<pre><code>
+import { Module } from '@nestjs/common';
+import { MyLogger } from './my-logger.service';
+
+@Module({
+  providers: [MyLogger],
+  exports: [MyLogger],
+})
+export class LoggerModule {}
+</code></pre>
+<p>Routes for APIs definitely look a little bit different (I'm taking all these examples <a href="https://docs.nestjs.com/controllers">from the nestjs docs</a>):</p>
+<pre><code>
+import { Controller, Get } from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Get()
+  findAll(): string {
+    return 'This action returns all cats';
+  }
+}
+</code></pre>
+<p>This works nicely with GraphQL, although instead of controller they're called resolvers</p>
+<pre><code>
+@Resolver(of =&gt; Author)
+export class AuthorsResolver {
+  constructor(
+    private authorsService: AuthorsService,
+    private postsService: PostsService,
+  ) {}
+
+  @Query(returns =&gt; Author)
+  async author(@Args('id', { type: () =&gt; Int }) id: number) {
+    return this.authorsService.findOneById(id);
+  }
+
+  @ResolveField()
+  async posts(@Parent() author: Author) {
+    const { id } = author;
+    return this.postsService.findAll({ authorId: id });
+  }
+}
+</code></pre>
+<p>The injected authorsService and postsService there make it really easy to isolate code when testing, keep business logic separated, and minimize code changes when you decide to completely change databases.</p>
+<p>🪥</p>
+<p>As someone who has only known JavaScript for web development for most of her career, I used to get annoyed when other developers would dismiss JS for being too flexible, too willy-nilly. I still think that freedom is the language's superpower, but I've also seen the light when it comes to implementing design decisions onto the code I work with and share daily. I'm glad to see the NestJS community accelerate.</p>
 
     <div class="controls">
     
     
       <p>
         <strong>Previous post</strong>: 
-        <a class="previous" href="/eleventy-blog/posts/git-aliases/">Fav Git Aliases for Quicker Commits</a>
+        <a class="previous" href="/eleventy-blog/posts/git-aliases/">Fav Git aliases for quicker commits</a>
       </p>
     
     
       <p>
         <strong>Next post</strong>: 
-        <a class="next" href="/eleventy-blog/posts/remote-working/">Thoughts On Remote Working 2 Years Later</a>
+        <a class="next" href="/eleventy-blog/drafts/remote-working/">Thoughts on remote working 2 years on</a>
       </p>
     
     </div>
