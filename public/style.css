@@ -8,9 +8,9 @@ to this section's matching END comment to see page-specific styles.
 ******************************************************************************/
 /* Our default values set as CSS variables */
 :root {
-  --color-bg: #D7F5EF;
+  --color-bg: #f3e4f7;
   --color-text-main: #000000;
-  --color-primary: #AFECE0;
+  --color-primary: #cfa1d8;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
   --font-family: "HK Grotesk";
@@ -38,31 +38,7 @@ to this section's matching END comment to see page-specific styles.
     format("opentype");
 }
 
-/* Our remix on glitch button */
-.btn--remix {
-  font-family: HK Grotesk;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  font-weight: 500;
-  height: 2.75rem;
-  align-items: center;
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000;
-  white-space: nowrap;
-  margin-left: auto;
-}
-.btn--remix img {
-  margin-right: 0.5rem;
-}
-.btn--remix:hover {
-  background-color: #D0FFF1;
-}
+
 
 /* Navigation grid */
 .footer {
@@ -111,11 +87,17 @@ body {
   place-items: center;
   margin: 3rem 2rem 0;
 }
+.title {
+  margin-bottom: 6rem;
+}
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
   margin: 0 auto;
+}
+
+code {
+  background: var(--color-primary);
 }
 
 /* Typography */
@@ -123,6 +105,7 @@ p {
   margin: 0 0 1rem 0;
   line-height: 1.5 !important;
   font-size: 1rem;
+  max-width: 50%;
 }
 h1,
 h2,
@@ -140,7 +123,7 @@ h1 {
   margin-bottom: 1.75rem;
   font-size: 5rem;
   display: inline-flex;
-  color: #2800FF;
+  color: #5a6954;
 }
 h2 {
   font-size: 4rem;
@@ -199,6 +182,11 @@ a:hover {
 /* Layout: Home */
 .home {
   justify-content: left;
+}
+
+.home p, .home a {
+  font-size: 2em;
+  max-width: 800px;
 }
 .illo-container {
   display: flex;

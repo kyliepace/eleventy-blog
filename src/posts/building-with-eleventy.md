@@ -1,31 +1,54 @@
 ---
 title: Building with eleventy
-description: How I am building this
+description: why I chose markdown over graphQL for my little blog
 date: 2022-01-02
 tags:
   - posts
 layout: layouts/post.njk
 ---
 
-The Eleventy ecosystem is *huge*! There are [official and community](https://www.11ty.dev/docs/starter/) starters for almost any Glitch project you can dream up.
+I generally avoid markdown. 
 
-The best part is, no matter what starter you use, as long as you set your eleventy app to [generated static site](https://help.glitch.com/kb/article/111-what-is-eleventy-11ty-and-how-can-i-use-it-on-glitch/), you'll be able to take advantage of the feature on Glitch!
+I'm a backend developer - I like databases, json, APIs. Storing content in files and treating github as my database just doesn't scale, and I've been on those projects before where managers try to make it.
 
-* Right now, your site is **live on the web**, with a real URL (a secure HTTPS address 🔒) that updates as soon as you make changes to your site or app.
+But, I know as a developer I'm also prone to shiny overkill. Why be up and running in five minutes when I could orchestrate an event-driven system in five hours that, who knows, could pivot into the next hot niche app?
 
-> 💡 In the Glitch editor, click your project name in the top left, and in the menu that opens, select the name and type a new one. Your project will be live at the new address instantly.
+I've enjoyed many a combination of static site generator and CMS. I like Strapi and Retool for being able to connect them to your own database. I love Crystallize for making it easy to manage products and ecommerce. Ghost is great if your dad is the one writing and publishing the content. Once upon a time I even had a skillshare video that made me a few bucks every month all about setting up a Hugo blog. Or was it Hexo? 
 
-* **Add a domain** to your new Glitch project! Just go to the **Tools** menu in the Glitch editor, and click on **Custom Domains**.
-* Use the **Share** button in the editor to invite others in to edit your new Eleventy project by typing in their email or Glitch username.
+😜
 
-> 💡 Make your code, or even your entire app, private to just those you invite, by [upgrading your Glitch account](https://glitch.com/pricing).
+So, I definitely feel spoiled for choice and detrimentally so, because I spend more time trying each tool than I do ever writing posts. Maybe, my attraction to the sleekest database integration and scalability wasn't helping me do the actual thing I'd set out to do.
 
-* Use a **full-powered Linux command line** to manage your new Glitch project. Go to the **Tools** menu in the Glitch editor, and click **Terminal** to peek under the hood.
-
-There are lots of [Eleventy plugins](https://www.11ty.dev/docs/plugins/) you can also add to your project.
-
-Some additional developments to try:
-* Add a UI library like [tailwind](https://tailwindcss.com/)
-* Use the [Eleventy image library](https://www.11ty.dev/docs/plugins/image/) to optimize your blog images
+I decided to bite the templating/markdown bullet so I could just build and deploy directly from github, for free. I went with Eleventy because it really is seamless to get up and running.
 
 🚀
+
+There are [official and community](https://www.11ty.dev/docs/starter/) starters and a scattering of to-the-point [plugins](https://www.11ty.dev/docs/plugins/) to be flexible, but just flexible enough to keep me focused. I'm not tapping into any React useEffects, and the css is basic. No less, let alone styled components (which is an amazing library). 
+
+I've kept [the repo](https://github.com/kyliepace/eleventy-blog) for this blog public, in case you want to check out the details.
+
+I don't think that eleventy does much differently about the tried-and-trusted method of rendering static pages from markdown.
+
+Here is what the beginning of this very file looks like:
+
+```
+---
+title: Building with eleventy
+description: why I chose markdown over graphQL for my little blog
+date: 2022-01-02
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
+I generally avoid markdown. 
+```
+
+At some point I'd like to modify this so that github can insert the date whenever a post is created or updated. The templating engine transforms this into html
+
+
+I don't have many opinions about templating languages as my enthusiasm for them ranges from middling to avoid at all costs.
+
+Honestly what I've enjoyed about eleventy so far was that their blog demo which I forked had good examples that I really haven't had to touch. 
+
+Cheers to laziness - it'll get us far.

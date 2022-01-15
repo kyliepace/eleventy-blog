@@ -11,34 +11,22 @@ The body of your posts will be in Markdown. With Glitch, you can edit Markdown r
 
 > 💡 Are the live updates to your site distracting you while you write or work? Go to the project menu in the top-left of your Glitch editor, and uncheck the box for **Refresh App on Changes**.
 
-### Post metadata
+### The problem
 
-Above the content of your posts, you'll include front matter that tells Eleventy about details like the title and date.
+I had been writing backend code like it was already minified and compiled, and that was a headache for colleagues, for testing, and for myself! 
+### Attempts at cleaning up my life
 
-Any values you include in the front matter are accessible in the template (e.g. `_includes/layouts/post.njk`). The template can build this data into the HTML page along with your post content.
+Ok, I thought, these services just need some organization. I started by trying to be consistent in how I divided files amongst folders. Maybe all singletons go together here, and all database-related code here. Is that better?
 
-### Add a post!
+My colleague started talking about design patterns. "Wouldn't this work well as an adapter? Shouldn't this just be a factory, and this part a builder?"
 
-Click the three little dots next to the `/posts` folder in Glitch and add a new file, naming it `my-first-post.md`.
+Er...was he making these words up?
 
-Add the following content to your new post, including the front matter and one line of text content:
+And that's how [refactoring guru](https://refactoring.guru/) came into my life, and we refactored several repos using patterns that would be recognizable to more brains than just my own.
+### The ah-hah
 
-```
----
-title: My First Blog Post
-description: Writing my first post on my new Eleventy blog
-date: 2030-01-01
-tags:
-  - posts
-layout: layouts/post.njk
----
+As soon as my team was rolling with consistent design patterns, someone posted a link to [NestJs](https://nestjs.com/)
 
-OMG this is my first post!
+Now, maybe this shows that there is truth to the stereotype of JavaScript having turned into a wild-west type environment, because being handed a framework that anticipates more needs than just wiring up an api (hi express) (not that there's anything wrong with an api) felt like being handed keys to a castle.
 
-```
 
-_Feel free to change the date to today's date if you like._
-
-Go to Posts or Home to see your new post added, and open it to see how the content appears, then come back here to __It's time to write some posts__!
-
-You might have noticed that your new post was added at the end of the list–we'll change that soon.
