@@ -25,7 +25,7 @@ I decided to bite the templating/markdown bullet so I could just build and deplo
 
 There are [official and community](https://www.11ty.dev/docs/starter/) starters and a scattering of to-the-point [plugins](https://www.11ty.dev/docs/plugins/) to be flexible, but just flexible enough to keep me focused. I'm not tapping into any React useEffects, and the css is basic. No less, let alone styled components (which is an amazing library). 
 
-The only thing I've really modified are the links so that this could be deployed as a github page. [thanks Sophia for a great guide](https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/)
+The only thing I've really modified are the links so that this could be deployed as a github page. [thanks Sophia for a great guide](https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/). 
 
 I've kept [the repo](https://github.com/kyliepace/eleventy-blog) for this blog public, in case you want to check out the details.
 
