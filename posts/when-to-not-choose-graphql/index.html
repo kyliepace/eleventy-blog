@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://kyliepace.imgix.net/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Code Cadette JavaScript Tech Blog" />
+    <meta name="author" content="Kylie Pace />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
+    <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
+    <title>When to not choose GraphQL for your API - Code Cadette</title>
+
+<meta name="description" content="A nodejs tech blog">
+<meta name="robots" content="index,follow">
+<meta name="author" content="undefined">
+
+<link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/when-to-not-choose-graphql/">
+
+<meta property="og:title" content="When to not choose GraphQL for your API - Code Cadette">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/when-to-not-choose-graphql/">
+<meta property="og:description" content="A nodejs tech blog">
+<meta property="og:image" content="💪🏼">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kylie_the_first">
+<meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/when-to-not-choose-graphql/">
+<meta name="twitter:title" content="When to not choose GraphQL for your API - Code Cadette">
+<meta name="twitter:description" content="A nodejs tech blog">
+<meta name="twitter:image" content="💪🏼">
+
+
+  </head>
+  <body>
+  <main>
+    
+    
+  
+    
+
+
+<div class="wrapper post">
+  <div class="title">
+
+    
+    <h1 class='postTitle'>When to not choose GraphQL for your API</h1>
+    <p>2022-01-15
+    <p>
+      <em>sometimes it&#39;s not the best choice</em>
+    </p>    
+  </div>
+  <div>
+    
+    <p>GraphQL is amazing. It puts data types and validation front and center, and lets the api user decide exactly what data they want returned without managing a handful of different http requests.</p>
+<p>However, just because it's a great query language doesn't mean it's always the best choice. Here are some alternatives to graphQL and when you might want to choose them.</p>
+<h4>rest</h4>
+<p>A REST API will usually have a handful of different operations like <code>GET /dog</code>, <code>POST /DOG</code>, <code>DELETE /dog</code>. The fields returned from an operation will always be the same so, even if you don't need to get the entire dog object, you're going to get it.</p>
+<p>In some situations, this is totally fine.</p>
+<p>For example, once I was building an API for a social media website. There were multiple clients using the API, but they all wanted the same fields from their get requests. In fact, they wanted all the fields. Each client had to write up this long graphQL request that had to be updated each time the data schema changed. In this case REST would have been easier.</p>
+<p>Caching and rate limiting are also easier to get up and running in REST.</p>
+<p>Finally, GraphQL has a more sophisticated error messaging system, but if your client is relying on http status codes to evaluate success, then be ready for some refactoring.</p>
+<h4>soap</h4>
+<p>er....yeah you probably might as well use graphQL then</p>
+<h4>gRPC</h4>
+<p>gRPC is a light and fast framework for transferring data that can be used in backend situations where REST and GraphQL couldn't be.</p>
+<p>Like GraphQL, gRPC methods can be as verby as needed. By that I mean it can handle situations where you don't just need a CRUD verb. Instead of GET /dog, maybe you need to check that the dog did the right trick and if so reward with a treat.</p>
+<pre><code>// The greeting service definition.
+service Greeter {
+  // SayHello method 
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message
+message HelloReply {
+  string message = 1;
+}
+</code></pre>
+<p><a href="https://kyliepace.imgix.net/tech-blog/Ivory%20Doughnut%20Illustration%20Decision%20Tree%20Chart.png"><img src="https://kyliepace.imgix.net/tech-blog/Ivory%20Doughnut%20Illustration%20Decision%20Tree%20Chart.png?fit=fill" alt="flowchart showing summary"></a></p>
+<h3>conclusion</h3>
+<p>There is a always a tradeoff, so if you don't need the features GraphQL delivers really well, then you're probably getting a bad deal.</p>
+
+    <div class="controls">
+    
+    
+    
+      <p>
+        <strong>Next post</strong>: 
+        <a class="next" href="/eleventy-blog/posts/git-aliases/">Fav Git aliases for quicker commits</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/eleventy-blog/">🪴 Home</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/posts">📝 Posts</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/about">🕶 About</a>
+        </div>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>

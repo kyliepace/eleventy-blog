@@ -11,7 +11,7 @@ to this section's matching END comment to see page-specific styles.
   --color-bg: #f3e4f7;
   --color-text-main: #000000;
   --color-primary: #cfa1d8;
-  --wrapper-height: 85vh;
+  --wrapper-height: 80vh;
   --image-max-width: 320px;
   --font-family: "HK Grotesk";
   --font-family-header: "HK Grotesk";
@@ -100,12 +100,18 @@ code {
   background: var(--color-primary);
 }
 
+img {
+  min-width: 300px;
+  width: 125%
+}
+
 /* Typography */
 p {
   margin: 0 0 1rem 0;
   line-height: 1.5 !important;
   font-size: 1rem;
   max-width: 50%;
+  min-width: 300px;
 }
 h1,
 h2,
