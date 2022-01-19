@@ -45,14 +45,13 @@ module.exports = function(eleventyConfig) {
   /* Build the collection of posts to list in the site
      - Read the Next Steps post to learn how to extend this
   */
-  eleventyConfig.addCollection("posts", function(collection) {
-    
-    /* The posts collection includes all posts that list 'posts' in the front matter 'tags'
-       - https://www.11ty.dev/docs/collections/
-    */
-    
-    const coll = collection
-      .getFilteredByTag("posts")
+  eleventyConfig.addCollection("posts", addCollection("posts"))
+  
+
+  function addCollection(collectionName){
+    return function(collection){
+      const coll = collection
+      .getFilteredByTag(collectionName)
       .sort((a, b) => b.data.date - a.data.date);
 
     // From: https://github.com/11ty/eleventy/issues/529#issuecomment-568257426 
@@ -66,7 +65,8 @@ module.exports = function(eleventyConfig) {
     }
 
     return coll;
-  });
+    }
+  }
 
   return {
     dir: {
