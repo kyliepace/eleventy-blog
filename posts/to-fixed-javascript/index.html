@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://kyliepace.imgix.net/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Code Cadette JavaScript Tech Blog" />
+    <meta name="author" content="Kylie Pace />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
+    <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
+    <meta name="google-site-verification" content="qbNROqebONSW5MNT3Qs2Q4O2z7ZnCHMbKeYOyonsWx4" />
+    <title>Trimming JavaScript to x number of decimal places - Code Cadette</title>
+
+<meta name="description" content="A nodejs tech blog">
+<meta name="robots" content="index,follow">
+<meta name="author" content="undefined">
+
+<link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/to-fixed-javascript/">
+
+<meta property="og:title" content="Trimming JavaScript to x number of decimal places - Code Cadette">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/to-fixed-javascript/">
+<meta property="og:description" content="A nodejs tech blog">
+<meta property="og:image" content="💪🏼">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kylie_the_first">
+<meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/to-fixed-javascript/">
+<meta name="twitter:title" content="Trimming JavaScript to x number of decimal places - Code Cadette">
+<meta name="twitter:description" content="A nodejs tech blog">
+<meta name="twitter:image" content="💪🏼">
+
+
+  </head>
+  <body>
+  <main>
+    
+    
+  
+    
+
+
+<div class="wrapper post">
+  <div class="title">
+
+    
+    <h1 class='postTitle'>Trimming JavaScript to x number of decimal places</h1>
+    <p>2022-01-20
+    <p>
+      <em>How to handle floats without rounding or weird multiplication surprises</em>
+    </p>    
+  </div>
+  <div>
+    
+    <p>If you're a JavaScript developer, you know about the language's fun take on math. But if you're a JavaScript developer like me, it seems to work out most of the time, so when should you be on the lookout for those unexpected JS math results?</p>
+<p>I finally met this beast recently while trying to figure out why a function to trim numbers to a certain number of decimal places was behaving badly.</p>
+<p>The typical method to do this is to use the <code>.toFixed(int)</code> method. But, this method helpfully rounds the value into its new constraints, so for example <code>4.248.toFixed(2)</code> becomes <code>4.25</code>, which I think makes the most sense. Unfortunately, one of the requirements for the function I was working with was that the value could not be rounded - 4.248 should become 4.24.</p>
+<p>One solution was to multiply the input number by 10 to the number of desired decimal places, Math.floor() the result to remove any additional decimal places, and divide by that 10 to the number power value.</p>
+<pre><code>const power = 10 ** decimalPlaces
+const truncatedNumber = Math.floor(number * power) / power
+</code></pre>
+<p>But here's where JS math rears its wild head. <code>number * power</code> with floats sometimes give results that are like 0.0000000001 too low, throwing the entire result off.</p>
+<p>At the end of the day, I wanted to treat the number value like a string, and just chop off any characters after a certain number of decimals.</p>
+<p>And, you can use regex to do this.</p>
+<script src="https://gist.github.com/kyliepace/a1ff779de53815e3803174d1067d4c75.js"></script>
+<p>And I believe more thorough libraries like decimal.js are using regex under the hood to account for JS math madness.</p>
+
+    <div class="controls">
+    
+    
+    
+      <p>
+        <strong>Next post</strong>: 
+        <a class="next" href="/eleventy-blog/posts/free-fast-blog/">Get blogging for free with eleventy and github</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/eleventy-blog/">🪴 Home</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/posts">📝 Posts</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/about">🕶 About</a>
+          <span class="divider">|</span>
+          <a href="https://kyliepace.github.io/book-blog">📖 Secret Bookish Blog</a>
+          <a class="right" href="https://www.github.com/kyliepace">github</a>
+        </div>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>

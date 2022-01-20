@@ -2,63 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>/posts/building-with-eleventy/</loc>
+    <loc>./eleventy-blog/posts/building-with-eleventy/</loc>
     <lastmod>2022-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/posts/choosing-nestjs/</loc>
+    <loc>./eleventy-blog/posts/choosing-nestjs/</loc>
     <lastmod>2022-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/posts/git-aliases/</loc>
+    <loc>./eleventy-blog/posts/git-aliases/</loc>
     <lastmod>2022-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/posts/when-to-not-choose-graphql/</loc>
+    <loc>./eleventy-blog/posts/when-to-not-choose-graphql/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/posts/free-fast-blog/</loc>
+    <loc>./eleventy-blog/posts/free-fast-blog/</loc>
     <lastmod>2022-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/about/</loc>
+    <loc>./eleventy-blog/posts/to-fixed-javascript/</loc>
     <lastmod>2022-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/drafts/udacity-streaming-review/</loc>
+    <loc>./eleventy-blog/about/</loc>
     <lastmod>2022-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/</loc>
+    <loc>./eleventy-blog/drafts/udacity-streaming-review/</loc>
     <lastmod>2022-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>/posts/</loc>
+    <loc>./eleventy-blog/</loc>
+    <lastmod>2022-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>./eleventy-blog/posts/</loc>
     <lastmod>2022-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
