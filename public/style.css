@@ -68,6 +68,12 @@ a:not(.btn--remix):visited {
 .footer .links {
   padding: 0.5rem 1rem 1.5rem;
   white-space: nowrap;
+  width: 100%;
+}
+
+
+.footer .links a.right {
+  float: right;
 }
 
 .divider {
