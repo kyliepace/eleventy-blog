@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://kyliepace.imgix.net/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Code Cadette JavaScript Tech Blog" />
+    <meta name="author" content="Kylie Pace />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
+    <link rel="stylesheet" type="text/css" href="/eleventy-blog/public/style.css" />
+    <meta name="google-site-verification" content="qbNROqebONSW5MNT3Qs2Q4O2z7ZnCHMbKeYOyonsWx4" />
+    <title>Get blogging for free with eleventy and github - Code Cadette</title>
+
+<meta name="description" content="A nodejs tech blog">
+<meta name="robots" content="index,follow">
+<meta name="author" content="undefined">
+
+<link rel="canonical" href="https://kyliepace.github.io/eleventy-blog//posts/free-fast-blog/">
+
+<meta property="og:title" content="Get blogging for free with eleventy and github - Code Cadette">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://kyliepace.github.io/eleventy-blog//posts/free-fast-blog/">
+<meta property="og:description" content="A nodejs tech blog">
+<meta property="og:image" content="💪🏼">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kylie_the_first">
+<meta name="twitter:url" content="https://kyliepace.github.io/eleventy-blog//posts/free-fast-blog/">
+<meta name="twitter:title" content="Get blogging for free with eleventy and github - Code Cadette">
+<meta name="twitter:description" content="A nodejs tech blog">
+<meta name="twitter:image" content="💪🏼">
+
+
+  </head>
+  <body>
+  <main>
+    
+    
+  
+    
+
+
+<div class="wrapper post">
+  <div class="title">
+
+    
+    <h1 class='postTitle'>Get blogging for free with eleventy and github</h1>
+    <p>2022-01-19
+    <p>
+      <em>how to set up and deploy a static blog with markdown content hosted for free on github pages</em>
+    </p>    
+  </div>
+  <div>
+    
+    <h3>Keep it simple</h3>
+<p><a href="https://www.youtube.com/playlist?list=PLPxGjkM3XHQM51bWQd477Zirux9ySlBRV">find video instruction on youtube</a></p>
+<p>It gets easier and easier to spin up a simple markdown-based blog without reverting to hand-writing html files. If you have a little bit of code experience, or want to take a peak at a text editor, read on to learn how you can get your own custom blog page built and deployed with eleventy and github pages.</p>
+<h3>Quick spin-up on Glitch</h3>
+<p>For the fastest code-to-site turnaround, <a href="glitch.com">glitch has a starter app named glitch-hello-eleventy</a> that forks a demo repo of a blog built with the static site generator eleventy.</p>
+<p><img src="https://kyliepace.imgix.net/tech-blog/Screen%20Shot%202022-01-19%20at%203.19.45%20PM.png" alt="glitch-hello-eleventy"></p>
+<p>Glitch gives you a new very random-looking project name and actually deploys your code to a url with that name, plus you get a live preview of the website through glitch's editor.</p>
+<p>The <code>todo.md</code> file starts you on a small guided adventure walking through the codebase, so use that to get familiar making a new post, adding elements to <code>.njk</code> nunjucks templates, and changing the css file in <code>/public/style.css</code></p>
+<p>If you want to delete any of the sample posts, you'll need to re-run <code>npm run build</code> through the glitch terminal.</p>
+<h4>Upload to your github</h4>
+<p>Glitch is great for quickly spinning up a live demo, but maybe you want to take the next steps with this blog set up.</p>
+<p>Since eleventy is a static site generator, we can throw those static files up on github pages for some FREE hosting.</p>
+<p>Now that you've made the blog your own, download the project from glitch. It will download as a zipped file so unzip it and then treat it like any other repo to push to github.</p>
+<ul>
+<li><code>npm install</code> to load dependencies</li>
+<li>double check the <code>.gitignore</code> file to make sure you're not committing anything unnecessary or worse secret</li>
+</ul>
+<p>since the glitch demo is already a git project with a remote named origin set pointing to glitch, you'll need to either add github as a remote with a different name, or else remove the glitch origin remote.</p>
+<p><code>git remote add github https://github.com/[$your github username]/[$your repo].git</code></p>
+<p>or</p>
+<pre><code>git remote remove origin
+git remote add origin https://github.com...
+</code></pre>
+<h4>Deploy with github pages</h4>
+<p>There are a few steps to take to turn your code into static files deployed on github.</p>
+<p>Fortunately, github actions can do that work, and <a href="https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/">Sophia at rock your code has already written a great guide</a>. There are three things you'll need to do:</p>
+<ol>
+<li>add a git action workflow</li>
+<li>modify the <code>package.json</code> build script to include a <code>--pathprefix</code> flag with the name of your repo (for example, <code>&quot;build&quot;: &quot;NODE_ENV=production eleventy --pathprefix 'book-blog'</code>)</li>
+<li>update all <code>&lt;a&gt;</code> and <code>&lt;link&gt;</code> <code>hrefs</code> from <code>&quot;$/path&quot;</code> to <code>&quot;.&quot;</code></li>
+</ol>
+<p>make sure you've installed the npm dependencies locally and have a <code>package-lock.json</code> or else the deploy will fail.</p>
+<p>The github action workflow runs <code>npm run build</code> and pushes the built files to a new <code>gh-pages</code> branch of your repo, which gets hosted on a url that will look like <code>https://[$your-github-username].github.io/[$your-github-repo-name]</code></p>
+<h4>Add sitemap.xml and robots.txt files for SEO</h4>
+<p>Now that you have your live blog that automatically redeploys with updates once you push changes to your <code>main</code> branch, maybe you'd like search engines to discover it (and therefore people too!)</p>
+<p>We can use nunjucks for this just like you use for all other html on your blog.</p>
+<p>In the <code>src</code> folder, add two new files - <code>sitemap.njk</code> and <code>robots.njk</code></p>
+<script src="https://gist.github.com/kyliepace/255f6cadf19870f3a8e33dd7490151b5.js"></script>
+<script src="https://gist.github.com/kyliepace/1088a25de73e3961338cb900d8b7729d.js"></script>
+<p>When the build script is run, these templates will generate a sitemap and a robots file instructing web crawlers how to see your site.</p>
+<h4>Write some blog</h4>
+<p>Now get writing! Your posts will be markdown files saved in github, so if you're looking to expand into a media empire with multiple people creating content you should start looking for a CMS. Otherwise, enjoy your new free blog!</p>
+
+    <div class="controls">
+    
+    
+    
+      <p>
+        <strong>Next post</strong>: 
+        <a class="next" href="/eleventy-blog/posts/when-to-not-choose-graphql/">When to not choose GraphQL for your API</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/eleventy-blog/">🪴 Home</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/posts">📝 Posts</a>
+          <span class="divider">|</span>
+          <a href="/eleventy-blog/about">🕶 About</a>
+          <span class="divider">|</span>
+          <a href="https://kyliepace.github.io/book-blog">📖 Secret Bookish Blog</a>
+        </div>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>
