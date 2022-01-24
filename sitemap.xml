@@ -2,71 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/building-with-eleventy/</loc>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/building-with-eleventy/</loc>
     <lastmod>2022-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/choosing-nestjs/</loc>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/choosing-nestjs/</loc>
     <lastmod>2022-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/git-aliases/</loc>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/git-aliases/</loc>
     <lastmod>2022-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/when-to-not-choose-graphql/</loc>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/when-to-not-choose-graphql/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/free-fast-blog/</loc>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/free-fast-blog/</loc>
     <lastmod>2022-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/to-fixed-javascript/</loc>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/to-fixed-javascript/</loc>
     <lastmod>2022-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/about/</loc>
-    <lastmod>2022-01-20</lastmod>
+    <loc>https://www.codecadette.com/eleventy-blog/about/</loc>
+    <lastmod>2022-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/drafts/udacity-streaming-review/</loc>
-    <lastmod>2022-01-20</lastmod>
+    <loc>https://www.codecadette.com/eleventy-blog/drafts/udacity-streaming-review/</loc>
+    <lastmod>2022-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/</loc>
-    <lastmod>2022-01-20</lastmod>
+    <loc>https://www.codecadette.com/eleventy-blog/</loc>
+    <lastmod>2022-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kyliepace.github.io/eleventy-blog/eleventy-blog/posts/</loc>
-    <lastmod>2022-01-20</lastmod>
+    <loc>https://www.codecadette.com/eleventy-blog/posts/</loc>
+    <lastmod>2022-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
