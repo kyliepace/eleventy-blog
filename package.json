@@ -4,7 +4,7 @@
   "description": "A simple tech blog, set up with Eleventy.",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy --pathprefix 'eleventy-blog'"
+    "build": "NODE_ENV=production eleventy"
   },
   "dependencies": {
     "eleventy-plugin-seo": "0.5.2",

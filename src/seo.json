@@ -1,7 +1,8 @@
 {
   "title": "Code Cadette",
-  "description": "A nodejs tech blog",
-  "url": "https://kyliepace.github.io/eleventy-blog/",
+  "description": "a typescript tech blog for Code Cadettes",
+  "url": "https://www.codecadette.com",
   "image": "💪🏼",
-  "twitter": "kylie_the_first"
+  "twitter": "kylie_the_first",
+  "author": "Kylie Pace"
 }
