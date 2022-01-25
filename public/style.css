@@ -35,12 +35,9 @@
 
 /* Navigation grid */
 .footer {
-  display: flex;
-  justify-content: space-between;
   margin: 1rem auto 0;
   padding: 1rem 0 0.75rem 0;
   width: 100%;
-  flex-wrap: wrap;
   border-top: 4px solid #fff;
 }
 
@@ -59,14 +56,16 @@ a:not(.btn--remix):visited {
 }
 
 .footer .links {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   padding: 0.5rem 1rem 1.5rem;
   white-space: nowrap;
   width: 100%;
 }
 
-
 .footer .links a.right {
-  float: right;
+  margin-left: auto;
 }
 
 .divider {
