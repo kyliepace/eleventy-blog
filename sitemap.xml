@@ -45,28 +45,21 @@
 
   <url>
     <loc>https://www.codecadette.com/about/</loc>
-    <lastmod>2022-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.codecadette.com/drafts/udacity-streaming-review/</loc>
-    <lastmod>2022-01-24</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.codecadette.com/</loc>
-    <lastmod>2022-01-24</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.codecadette.com/posts/</loc>
-    <lastmod>2022-01-24</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
