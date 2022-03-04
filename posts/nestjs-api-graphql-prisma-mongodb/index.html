@@ -53,123 +53,54 @@
 
     
     <h1 class='postTitle'>Building a NestJS GraphQL API with Prisma and MongoDB</h1>
-    <p>2022-01-25
+    <p>2022-02-10
     <p>
       <em></em>
     </p>    
   </div>
   <div>
     
-    <p>Although what I like about prisma: easy set-up, creates db repository service layer for you</p>
-<p>Tried typeorm....balls. Back to prisma. maybe I should switch to sql.</p>
-<ol>
-<li>
-<p>follow nestjs docs to start new nestjs project</p>
-</li>
-<li>
-<p>follow nestjs graphql docs to add graphql</p>
-</li>
-</ol>
-<pre><code>@Module({
-  imports: [
-    GraphQLModule.forRoot({
-      debug: true,
-      playground: true,
-      typePaths: [
-        '/**/*.graphql'
-      ],
-      definitions: {
-        path: join(process.cwd(), 'src/graphql.ts'),
-        outputAs: 'class'
-      }
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-</code></pre>
-<ol start="3">
-<li>start by following <a href="https://docs.nestjs.com/recipes/prisma">nestjs docs to add prisma</a>, but a few steps different if using mongodb instead of sql
-instead of <code>npx prisma migrate dev --name init</code>, have to <code>npx prisma db push</code>
-Also, the <code>schema.prisma</code> syntax is a bit different</li>
-</ol>
+    <p>It's no secret that I like a good book shopping spree. Recently, after a flurry of book ordering, I decided to make a database and api to track my books, their authors and translators, and some of the characters in each book. Because, isn't making a database what everyone does for the things they love?</p>
+<p>Naturally I chose nestjs, mongodb, and graphql. I really like what I've seen from prisma, so when I saw that their mongodb connector was finally in beta, I decided to have a go connecting all the pieces.</p>
+<p>Things that I like about prisma: it's easy to set up, it creates the db layer for you, and it gives you a type-safe database schema
+Although what I like about prisma: easy set-up, creates db repository service layer for you that just works out of the box.</p>
+<p>The one thing that really sold me on prisma over mongoose? The <code>@updatedAt</code> decorator that sits on the db schema, instead of having to write an update hook that doesn't even run on all types of updates.</p>
+<h3>Up &amp; Running</h3>
+<p>I started by following <a href="https://docs.nestjs.com/recipes/prisma">nestjs docs to add prisma</a>, but a few steps different if using mongodb instead of sql.
+Like instead of <code>npx prisma migrate dev --name init</code>, you have to use <code>npx prisma db push</code>, and the <code>schema.prisma</code> syntax is a bit different. (I'll get back to that)</p>
 <p><a href="https://www.prisma.io/docs/concepts/components/prisma-schema/relations">see mongodb example on prisma docs</a></p>
 <p><a href="https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nestjs">good example app</a></p>
-<ol start="4">
-<li>integrate graphql with prisma
-instead of using controllers, add resolvers to the <code>app.module.ts</code> providers array</li>
-</ol>
-<p>// https://www.prisma.io/nestjs</p>
-<ol start="5">
-<li>mongodb many:many relationships
-One thing that was tricky to understand was how to set up many:many relationships in mongo through prisma.</li>
-</ol>
-<p>Prisma makes both models reference each other, so if my Character model can exist in multiple Books, and a Book can be linked to multiple Characters, I set that up like</p>
-<pre><code>model Character {
-  id        String  @id @default(dbgenerated()) @map(&quot;_id&quot;) @db.ObjectId
-  ...
-  books     Book[]    @relation(fields: [bookIds], references: [id])
-  bookIds   String[]  @db.Array(ObjectId)
-}
-
-model Book {
-  id            String   @id @default(dbgenerated()) @map(&quot;_id&quot;) @db.ObjectId
-  ...
-  characters    Character[] 
-}
+<p>On the nestjs side of things I had to make a few tweaks as well. <a href="https://www.prisma.io/nestjs">These prisma docs help</a></p>
+<p>I added a prisma.service file in my src root that handles connecting to the database, and then each sub-module (Book, Author, Character) uses that PrismaService as a dependency injection loaded as a provider.</p>
+<pre><code class="language-book.module.ts">import { Module } from '@nestjs/common';
+import { PrismaService } from '../prisma.service';
+import { BookResolver } from './book.resolver';
+import { BookService } from './book.service'
+@Module({
+  providers: [BookResolver, PrismaService, BookService],
+})
+export class BookModule {}
 </code></pre>
+<p>At the resolver level, database queries are written through this injected prismaService, so something like adding a book to the book collection would look like <code>this.prismaService.book.create({data})</code>. This returns a <code>Book</code> object as defined by <code>@prisma/client</code>.</p>
+<script src="https://gist.github.com/kyliepace/5ac32180c4ea66deb0427b2352f6ff20.js"></script>
+<p>One thing that I stumbled on while setting up the resolver was the difference between the prisma Book model and the Book model I still needed to defined for graphql (of course, this will depend on how you are choosing to use nestjs - code first or schema first). While the addBook method is returning the prisma Book, for graphql purposes it is returning the interface that I defined in <code>./models/book.model</code> to the client. This is one big difference between this strategy, and mongoose, where the database and the graphql strategy are combined in one model.</p>
+<h3>The challenge: many to many relationships</h3>
+<p>I was running on the cutting edge of prisma because while I was working on this, the prisma team released support for mongodb embedded documents. Without this feature, I would have (and for a while, did) switched to a different ORM.</p>
+<p>To back up for a second, I was building a database for books, authors, and characters.</p>
+<p>Each book can have multiple authors, who can have multiple books (many-many)
+Each book can have multiple characters, who can have multiple books (many-many)</p>
+<p>In addition, I was thinking about the translators of books, who are their own type of author. Each translator can work on many books, and each book can have many translators (many-many)</p>
+<p>Because Prisma was originally built for sql databases, the default way to model these relationships would be by giving each model an array of object ids that link to another collection. So each book could have an array of authorIds and each author an array of bookIds, and when I query a book and ask to include author information I'd then use those authorIds to query the author collection.</p>
+<p>The way to set this up in Prisma looks like this:</p>
+<script src="https://gist.github.com/kyliepace/51d483c232b03c7bccced8aa61b442c5.js"></script>
+<p>This is optimized for writes, but not for reads, and since I think I'll be querying this information more often than I'll be writing it, I'd rather replace some of these relationships with duplicated data embedded in each record.</p>
 <p><a href="https://www.prisma.io/docs/concepts/components/prisma-schema/relations/many-to-many-relations#mongodb">prisma docs for reference</a></p>
 <p>Prisma doesn't actually populate a <code>Character.books</code> array or a <code>Book.characters</code> array in the database, but instead use the foreign keys stored in <code>Character.bookIds</code>.</p>
 <p>This seems like it is not optimized for reads. I'd rather embed either partial book data in the character model, and/or partial character data in the book model, if these are going to be queried much more often than mutated.</p>
-<p>But wait, I have additional complexity to add.
-The same m-n relationship could apply to books and authors - multiple authors could write or translate a book, while an author may write or translate multiple books.
-On the book model I want to distinguish between the people who wrote the original version of the book (I'll call them authors), and people who translated the book (arguably also authors, but let's call them translators for clarity).</p>
-<p>The Book model will be set up with the same idea as before, except we need to name these relations</p>
-<pre><code>model Book {
-  ...
-  authors       Author[] @relation(&quot;book-authors&quot;, fields: [authorIds])
-  authorIds     String[] @db.Array(ObjectId)
-  translators   Author[] @relation(&quot;book-translators&quot;, fields: [authorIds])
-  translatorIds String[] @db.Array(ObjectId)
-  ...
-}
-</code></pre>
-<p>But then the Author model will just make use of this relation name and won't have its own arrays of bookIds or translatedIds</p>
-<pre><code>model Author {
-  ...
-  books         Book[] @relation(&quot;book-authors&quot;)
-  translated    Book[] @relation(&quot;book-translators&quot;)
-  ...
-}
-</code></pre>
-<p>I decided though that this forced normalization defeated the point of using mongodb in the first place, so I decided to keep things unlinked and denormalize embedded duplicates of data, optimizing for reads over writes.</p>
-<pre><code>model Book {
-  ...
-  authors       Json[] 
-  authorIds     String[] @db.Array(ObjectId)
-  translators   Json[] 
-  translatorIds String[] @db.Array(ObjectId)
-  ...
-}
-</code></pre>
-<p>Prisma says support for embedded documents is coming soon so we'll see. but for now, I use this somewhat vague Json type to show that I'm just going to duplicate data in these arrays.</p>
-<p>Then I got into the usual trouble differentiating between data being sent to be saved to the database, where we wouldn't expect to have fields like id or createdAt, and the schema of the database document. I started introducing new classes with names like NewBook or BeforeSavedCharacter.</p>
-<p>Ok, let's use mongoose then shall we?</p>
-<p>One nice thing about mongoose is that the graphql and database schema definitions can be combined</p>
-<pre><code>@ObjectType()
-@Schema()
-export class Character {
-  @Field({ nullable: true })
-  @Prop()
-  firstName?: string
-}
-</code></pre>
-<p>Now I can distinguish between the incoming GraphQL types and the mongoose database schema but in the same place. Whew!</p>
-<p>Works pretty well, even for my maze of nested authors in books in characters, and books in authors in characters.
-I created an additional service layer between the resolver and db layer to help handle the complexity of upserting to these different collections
-when doing something like adding a new book with a new author and new characters.</p>
-<p>I got into a little bit of graphql trouble from that because, for example, the book nested in author that is added to that author when the
-book is added to the database doesn't yet have an _id field, but the graphql schema, which reuses the top-level book/author/character schema, expects it to be there. Fortunately the <code>{nullable: true}</code> (or <code>{nullable: 'itemsAndList'}</code> if it's an array)flag got me out of that jam.</p>
+<p>Thank you, prisma team, for making this possible! Here I'm embedding the information about authors who created each character. If I update an author, I may now need to also update this duplicated information in the character collection, but it saves me a trip to the author collection when querying characters.</p>
+<script src="https://gist.github.com/kyliepace/687495991bded01a00e893999041ab29.js"></script>
+<p>When defining the graphql model, I needed to add <code>{nullable: 'itemsAndList'}</code> to the possible array of authors embedded in a graphql book model.</p>
+<p>So that's how I glued all these pieces together - nestjs, mongodb, graphql, and prisma - to make my own little book database and api. Now I can put my legs up and actually get to reading these fresh finds!</p>
 
     <div class="controls">
     
