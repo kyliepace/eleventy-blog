@@ -44,22 +44,29 @@
   </url>
 
   <url>
-    <loc>https://www.codecadette.com/about/</loc>
+    <loc>https://www.codecadette.com/posts/nestjs-api-graphql-prisma-mongodb/</loc>
     <lastmod>2022-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.codecadette.com/about/</loc>
+    <lastmod>2022-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.codecadette.com/</loc>
-    <lastmod>2022-01-25</lastmod>
+    <lastmod>2022-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.codecadette.com/posts/</loc>
-    <lastmod>2022-01-25</lastmod>
+    <lastmod>2022-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

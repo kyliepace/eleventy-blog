@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://kyliepace.imgix.net/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="TypeScript, NodeJS, NestJS, women in tech" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <meta name="google-site-verification" content="qbNROqebONSW5MNT3Qs2Q4O2z7ZnCHMbKeYOyonsWx4" />
+    <title>Building a NestJS GraphQL API with Prisma and MongoDB - Code Cadette</title>
+
+<meta name="description" content="a typescript tech blog for Code Cadettes">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Kylie Pace">
+
+<link rel="canonical" href="https://www.codecadette.com/posts/nestjs-api-graphql-prisma-mongodb/">
+
+<meta property="og:title" content="Building a NestJS GraphQL API with Prisma and MongoDB - Code Cadette">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://www.codecadette.com/posts/nestjs-api-graphql-prisma-mongodb/">
+<meta property="og:description" content="a typescript tech blog for Code Cadettes">
+<meta property="og:image" content="💪🏼">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@kylie_the_first">
+<meta name="twitter:url" content="https://www.codecadette.com/posts/nestjs-api-graphql-prisma-mongodb/">
+<meta name="twitter:title" content="Building a NestJS GraphQL API with Prisma and MongoDB - Code Cadette">
+<meta name="twitter:description" content="a typescript tech blog for Code Cadettes">
+<meta name="twitter:image" content="💪🏼">
+
+
+
+    <script src="https://getinsights.io/js/insights.js"></script>
+    <script>
+      insights.init('if5aErcP9v425y8M');    
+      insights.trackPages()
+    </script>
+  </head>
+  <body>
+  <main>
+    
+    
+  
+    
+
+
+<div class="wrapper post">
+  <div class="title">
+
+    
+    <h1 class='postTitle'>Building a NestJS GraphQL API with Prisma and MongoDB</h1>
+    <p>2022-01-25
+    <p>
+      <em></em>
+    </p>    
+  </div>
+  <div>
+    
+    <p>Although what I like about prisma: easy set-up, creates db repository service layer for you</p>
+<p>Tried typeorm....balls. Back to prisma. maybe I should switch to sql.</p>
+<ol>
+<li>
+<p>follow nestjs docs to start new nestjs project</p>
+</li>
+<li>
+<p>follow nestjs graphql docs to add graphql</p>
+</li>
+</ol>
+<pre><code>@Module({
+  imports: [
+    GraphQLModule.forRoot({
+      debug: true,
+      playground: true,
+      typePaths: [
+        '/**/*.graphql'
+      ],
+      definitions: {
+        path: join(process.cwd(), 'src/graphql.ts'),
+        outputAs: 'class'
+      }
+    }),
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+</code></pre>
+<ol start="3">
+<li>start by following <a href="https://docs.nestjs.com/recipes/prisma">nestjs docs to add prisma</a>, but a few steps different if using mongodb instead of sql
+instead of <code>npx prisma migrate dev --name init</code>, have to <code>npx prisma db push</code>
+Also, the <code>schema.prisma</code> syntax is a bit different</li>
+</ol>
+<p><a href="https://www.prisma.io/docs/concepts/components/prisma-schema/relations">see mongodb example on prisma docs</a></p>
+<p><a href="https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nestjs">good example app</a></p>
+<ol start="4">
+<li>integrate graphql with prisma
+instead of using controllers, add resolvers to the <code>app.module.ts</code> providers array</li>
+</ol>
+<p>// https://www.prisma.io/nestjs</p>
+<ol start="5">
+<li>mongodb many:many relationships
+One thing that was tricky to understand was how to set up many:many relationships in mongo through prisma.</li>
+</ol>
+<p>Prisma makes both models reference each other, so if my Character model can exist in multiple Books, and a Book can be linked to multiple Characters, I set that up like</p>
+<pre><code>model Character {
+  id        String  @id @default(dbgenerated()) @map(&quot;_id&quot;) @db.ObjectId
+  ...
+  books     Book[]    @relation(fields: [bookIds], references: [id])
+  bookIds   String[]  @db.Array(ObjectId)
+}
+
+model Book {
+  id            String   @id @default(dbgenerated()) @map(&quot;_id&quot;) @db.ObjectId
+  ...
+  characters    Character[] 
+}
+</code></pre>
+<p><a href="https://www.prisma.io/docs/concepts/components/prisma-schema/relations/many-to-many-relations#mongodb">prisma docs for reference</a></p>
+<p>Prisma doesn't actually populate a <code>Character.books</code> array or a <code>Book.characters</code> array in the database, but instead use the foreign keys stored in <code>Character.bookIds</code>.</p>
+<p>This seems like it is not optimized for reads. I'd rather embed either partial book data in the character model, and/or partial character data in the book model, if these are going to be queried much more often than mutated.</p>
+<p>But wait, I have additional complexity to add.
+The same m-n relationship could apply to books and authors - multiple authors could write or translate a book, while an author may write or translate multiple books.
+On the book model I want to distinguish between the people who wrote the original version of the book (I'll call them authors), and people who translated the book (arguably also authors, but let's call them translators for clarity).</p>
+<p>The Book model will be set up with the same idea as before, except we need to name these relations</p>
+<pre><code>model Book {
+  ...
+  authors       Author[] @relation(&quot;book-authors&quot;, fields: [authorIds])
+  authorIds     String[] @db.Array(ObjectId)
+  translators   Author[] @relation(&quot;book-translators&quot;, fields: [authorIds])
+  translatorIds String[] @db.Array(ObjectId)
+  ...
+}
+</code></pre>
+<p>But then the Author model will just make use of this relation name and won't have its own arrays of bookIds or translatedIds</p>
+<pre><code>model Author {
+  ...
+  books         Book[] @relation(&quot;book-authors&quot;)
+  translated    Book[] @relation(&quot;book-translators&quot;)
+  ...
+}
+</code></pre>
+<p>I decided though that this forced normalization defeated the point of using mongodb in the first place, so I decided to keep things unlinked and denormalize embedded duplicates of data, optimizing for reads over writes.</p>
+<pre><code>model Book {
+  ...
+  authors       Json[] 
+  authorIds     String[] @db.Array(ObjectId)
+  translators   Json[] 
+  translatorIds String[] @db.Array(ObjectId)
+  ...
+}
+</code></pre>
+<p>Prisma says support for embedded documents is coming soon so we'll see. but for now, I use this somewhat vague Json type to show that I'm just going to duplicate data in these arrays.</p>
+<p>Then I got into the usual trouble differentiating between data being sent to be saved to the database, where we wouldn't expect to have fields like id or createdAt, and the schema of the database document. I started introducing new classes with names like NewBook or BeforeSavedCharacter.</p>
+<p>Ok, let's use mongoose then shall we?</p>
+<p>One nice thing about mongoose is that the graphql and database schema definitions can be combined</p>
+<pre><code>@ObjectType()
+@Schema()
+export class Character {
+  @Field({ nullable: true })
+  @Prop()
+  firstName?: string
+}
+</code></pre>
+<p>Now I can distinguish between the incoming GraphQL types and the mongoose database schema but in the same place. Whew!</p>
+<p>Works pretty well, even for my maze of nested authors in books in characters, and books in authors in characters.
+I created an additional service layer between the resolver and db layer to help handle the complexity of upserting to these different collections
+when doing something like adding a new book with a new author and new characters.</p>
+<p>I got into a little bit of graphql trouble from that because, for example, the book nested in author that is added to that author when the
+book is added to the database doesn't yet have an _id field, but the graphql schema, which reuses the top-level book/author/character schema, expects it to be there. Fortunately the <code>{nullable: true}</code> (or <code>{nullable: 'itemsAndList'}</code> if it's an array)flag got me out of that jam.</p>
+
+    <div class="controls">
+    
+    
+    
+      <p>
+        <strong>Next post</strong>: 
+        <a class="next" href="/posts/to-fixed-javascript/">Trimming JavaScript to x number of decimal places</a>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/">🪴 Home</a>
+          <span class="divider">|</span>
+          <a href="/posts">📝 Posts</a>
+          <span class="divider">|</span>
+          <a href="/about">🕶 About</a>
+          <span class="divider">|</span>
+          <a href="https://kyliepace.github.io/book-blog">📖 Secret Bookish Blog</a>
+          <a class="right" href="https://www.github.com/kyliepace">github</a>
+        </div>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>
